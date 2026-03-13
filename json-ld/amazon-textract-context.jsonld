@@ -1,0 +1,75 @@
+{
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "aws": "https://aws.amazon.com/textract/schemas/",
+    "textract": "https://docs.aws.amazon.com/textract/latest/dg/API_Reference.html#",
+    "DocumentAnalysis": {
+      "@id": "aws:DocumentAnalysis",
+      "@context": {
+        "DocumentMetadata": "aws:documentMetadata",
+        "Blocks": "aws:Block",
+        "AnalyzeDocumentModelVersion": "schema:softwareVersion"
+      }
+    },
+    "Block": {
+      "@id": "aws:Block",
+      "@context": {
+        "BlockType": "schema:additionalType",
+        "Confidence": "aws:confidence",
+        "Text": "schema:text",
+        "TextType": "aws:textType",
+        "Id": "schema:identifier",
+        "Geometry": "aws:Geometry",
+        "Relationships": "aws:relationships",
+        "Page": "schema:pagination",
+        "EntityTypes": "aws:entityTypes",
+        "SelectionStatus": "aws:selectionStatus"
+      }
+    },
+    "Geometry": {
+      "@id": "aws:Geometry",
+      "@context": {
+        "BoundingBox": "aws:BoundingBox",
+        "Polygon": "aws:polygon"
+      }
+    },
+    "BoundingBox": {
+      "@id": "aws:BoundingBox",
+      "@context": {
+        "Width": "schema:width",
+        "Height": "schema:height",
+        "Left": "aws:left",
+        "Top": "aws:top"
+      }
+    },
+    "DocumentMetadata": {
+      "@id": "aws:DocumentMetadata",
+      "@context": {
+        "Pages": "schema:numberOfPages"
+      }
+    },
+    "ExpenseDocument": {
+      "@id": "aws:ExpenseDocument",
+      "@context": {
+        "ExpenseIndex": "schema:position",
+        "SummaryFields": "aws:summaryFields",
+        "LineItemGroups": "aws:lineItemGroups"
+      }
+    },
+    "IdentityDocument": {
+      "@id": "aws:IdentityDocument",
+      "@context": {
+        "DocumentIndex": "schema:position",
+        "IdentityDocumentFields": "aws:identityDocumentFields"
+      }
+    },
+    "Query": {
+      "@id": "aws:Query",
+      "@context": {
+        "Text": "schema:text",
+        "Alias": "schema:alternateName",
+        "Pages": "aws:pages"
+      }
+    }
+  }
+}

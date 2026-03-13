@@ -1,0 +1,462 @@
+openapi: 3.0.0
+info:
+  title: Amazon Textract
+  description: Amazon Textract is a machine learning service that automatically extracts text, handwriting, and data from scanned documents, going beyond simple OCR to identify and extract data from forms and tables.
+  version: '2018-06-27'
+  contact:
+    name: Kin Lane
+    email: kin@apievangelist.com
+    url: https://aws.amazon.com/textract/
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0
+servers:
+  - url: https://textract.amazonaws.com
+    description: Amazon Textract API endpoint
+paths:
+  /:
+    post:
+      operationId: DetectDocumentText
+      summary: Detect Document Text
+      description: Detects text in the input document, returning lines and words of detected text along with confidence levels and bounding box information.
+      headers:
+        X-Amz-Target:
+          description: The target API operation.
+          schema:
+            type: string
+            enum:
+              - Textract.DetectDocumentText
+      requestBody:
+        required: true
+        content:
+          application/x-amz-json-1.1:
+            schema:
+              type: object
+              properties:
+                Document:
+                  type: object
+                  description: The input document as base64-encoded bytes or an S3 object.
+                  properties:
+                    Bytes:
+                      type: string
+                      format: byte
+                    S3Object:
+                      type: object
+                      properties:
+                        Bucket:
+                          type: string
+                        Name:
+                          type: string
+                        Version:
+                          type: string
+              required:
+                - Document
+      responses:
+        '200':
+          description: Successful text detection response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DocumentAnalysis'
+      tags:
+        - Text Detection
+
+  /#AnalyzeDocument:
+    post:
+      operationId: AnalyzeDocument
+      summary: Analyze Document
+      description: Analyzes an input document for relationships between detected items, including tables, forms, and key-value pairs.
+      requestBody:
+        required: true
+        content:
+          application/x-amz-json-1.1:
+            schema:
+              type: object
+              properties:
+                Document:
+                  type: object
+                  properties:
+                    Bytes:
+                      type: string
+                      format: byte
+                    S3Object:
+                      type: object
+                      properties:
+                        Bucket:
+                          type: string
+                        Name:
+                          type: string
+                FeatureTypes:
+                  type: array
+                  description: A list of the types of analysis to perform.
+                  items:
+                    type: string
+                    enum:
+                      - TABLES
+                      - FORMS
+                      - QUERIES
+                      - SIGNATURES
+                      - LAYOUT
+                QueriesConfig:
+                  type: object
+                  properties:
+                    Queries:
+                      type: array
+                      items:
+                        type: object
+                        properties:
+                          Text:
+                            type: string
+                          Alias:
+                            type: string
+                          Pages:
+                            type: array
+                            items:
+                              type: string
+              required:
+                - Document
+                - FeatureTypes
+      responses:
+        '200':
+          description: Successful document analysis response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DocumentAnalysis'
+      tags:
+        - Document Analysis
+
+  /#StartDocumentTextDetection:
+    post:
+      operationId: StartDocumentTextDetection
+      summary: Start Document Text Detection
+      description: Starts the asynchronous detection of text in a document stored in an Amazon S3 bucket.
+      requestBody:
+        required: true
+        content:
+          application/x-amz-json-1.1:
+            schema:
+              type: object
+              properties:
+                DocumentLocation:
+                  type: object
+                  description: The location of the document to be processed.
+                  properties:
+                    S3Object:
+                      type: object
+                      properties:
+                        Bucket:
+                          type: string
+                        Name:
+                          type: string
+                        Version:
+                          type: string
+                ClientRequestToken:
+                  type: string
+                JobTag:
+                  type: string
+                NotificationChannel:
+                  type: object
+                  properties:
+                    SNSTopicArn:
+                      type: string
+                    RoleArn:
+                      type: string
+              required:
+                - DocumentLocation
+      responses:
+        '200':
+          description: Asynchronous job started successfully.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  JobId:
+                    type: string
+      tags:
+        - Async Operations
+
+  /#GetDocumentTextDetection:
+    post:
+      operationId: GetDocumentTextDetection
+      summary: Get Document Text Detection
+      description: Gets the results for an Amazon Textract asynchronous operation that detects text in a document.
+      requestBody:
+        required: true
+        content:
+          application/x-amz-json-1.1:
+            schema:
+              type: object
+              properties:
+                JobId:
+                  type: string
+                  description: A unique identifier for the text detection job.
+                MaxResults:
+                  type: integer
+                NextToken:
+                  type: string
+              required:
+                - JobId
+      responses:
+        '200':
+          description: Text detection results.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  DocumentMetadata:
+                    type: object
+                    properties:
+                      Pages:
+                        type: integer
+                  JobStatus:
+                    type: string
+                    enum:
+                      - IN_PROGRESS
+                      - SUCCEEDED
+                      - FAILED
+                      - PARTIAL_SUCCESS
+                  Blocks:
+                    type: array
+                    items:
+                      type: object
+                  NextToken:
+                    type: string
+      tags:
+        - Async Operations
+
+  /#AnalyzeExpense:
+    post:
+      operationId: AnalyzeExpense
+      summary: Analyze Expense
+      description: Analyzes an input document for financially related relationships between text, returning information about expenses including vendor name, line items, and total amounts.
+      requestBody:
+        required: true
+        content:
+          application/x-amz-json-1.1:
+            schema:
+              type: object
+              properties:
+                Document:
+                  type: object
+                  properties:
+                    Bytes:
+                      type: string
+                      format: byte
+                    S3Object:
+                      type: object
+                      properties:
+                        Bucket:
+                          type: string
+                        Name:
+                          type: string
+              required:
+                - Document
+      responses:
+        '200':
+          description: Expense analysis results.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  DocumentMetadata:
+                    type: object
+                  ExpenseDocuments:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        ExpenseIndex:
+                          type: integer
+                        SummaryFields:
+                          type: array
+                          items:
+                            type: object
+                        LineItemGroups:
+                          type: array
+                          items:
+                            type: object
+      tags:
+        - Expense Analysis
+
+  /#AnalyzeID:
+    post:
+      operationId: AnalyzeID
+      summary: Analyze ID
+      description: Analyzes identity documents for relevant information including name, address, and date of birth from passports and driver's licenses.
+      requestBody:
+        required: true
+        content:
+          application/x-amz-json-1.1:
+            schema:
+              type: object
+              properties:
+                DocumentPages:
+                  type: array
+                  description: The document pages to analyze.
+                  items:
+                    type: object
+                    properties:
+                      Bytes:
+                        type: string
+                        format: byte
+                      S3Object:
+                        type: object
+                        properties:
+                          Bucket:
+                            type: string
+                          Name:
+                            type: string
+              required:
+                - DocumentPages
+      responses:
+        '200':
+          description: ID analysis results.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  IdentityDocuments:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        DocumentIndex:
+                          type: integer
+                        IdentityDocumentFields:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              Type:
+                                type: object
+                              ValueDetection:
+                                type: object
+                  DocumentMetadata:
+                    type: object
+      tags:
+        - ID Analysis
+
+components:
+  schemas:
+    DocumentAnalysis:
+      type: object
+      description: Response object containing the results of document text detection or analysis, including detected blocks of text, tables, and forms.
+      properties:
+        DocumentMetadata:
+          type: object
+          description: Metadata about the document.
+          properties:
+            Pages:
+              type: integer
+              description: The number of pages detected in the document.
+        Blocks:
+          type: array
+          description: The items detected in the document.
+          items:
+            type: object
+            properties:
+              BlockType:
+                type: string
+                description: The type of text item detected.
+                enum:
+                  - KEY_VALUE_SET
+                  - PAGE
+                  - LINE
+                  - WORD
+                  - TABLE
+                  - CELL
+                  - SELECTION_ELEMENT
+                  - MERGED_CELL
+                  - TITLE
+                  - QUERY
+                  - QUERY_RESULT
+                  - SIGNATURE
+                  - TABLE_TITLE
+                  - TABLE_FOOTER
+                  - LAYOUT_TEXT
+                  - LAYOUT_TITLE
+                  - LAYOUT_HEADER
+                  - LAYOUT_FOOTER
+                  - LAYOUT_SECTION_HEADER
+                  - LAYOUT_PAGE_NUMBER
+                  - LAYOUT_LIST
+                  - LAYOUT_FIGURE
+                  - LAYOUT_TABLE
+                  - LAYOUT_KEY_VALUE
+              Confidence:
+                type: number
+                format: float
+                description: The confidence score for the detected block.
+              Text:
+                type: string
+                description: The word or line of text recognized.
+              Geometry:
+                type: object
+                properties:
+                  BoundingBox:
+                    type: object
+                    properties:
+                      Width:
+                        type: number
+                      Height:
+                        type: number
+                      Left:
+                        type: number
+                      Top:
+                        type: number
+                  Polygon:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        X:
+                          type: number
+                        Y:
+                          type: number
+              Id:
+                type: string
+                description: The identifier for the recognized text block.
+              Relationships:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    Type:
+                      type: string
+                      enum:
+                        - VALUE
+                        - CHILD
+                        - COMPLEX_FEATURES
+                        - MERGED_CELL
+                        - TITLE
+                        - ANSWER
+                        - TABLE
+                        - TABLE_TITLE
+                        - TABLE_FOOTER
+                    Ids:
+                      type: array
+                      items:
+                        type: string
+              Page:
+                type: integer
+                description: The page on which the block was detected.
+        AnalyzeDocumentModelVersion:
+          type: string
+          description: The version of the model used to analyze the document.
+
+tags:
+  - name: Text Detection
+    description: Operations for detecting text in documents.
+  - name: Document Analysis
+    description: Operations for analyzing document structure and content.
+  - name: Async Operations
+    description: Operations for asynchronous document processing.
+  - name: Expense Analysis
+    description: Operations for analyzing expense documents.
+  - name: ID Analysis
+    description: Operations for analyzing identity documents.
