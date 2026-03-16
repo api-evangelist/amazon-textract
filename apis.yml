@@ -1,4 +1,4 @@
-name: Amazon Textract API
+name: Amazon Textract
 description: Amazon Textract is a machine learning service that automatically extracts text, handwriting, and structured data from scanned documents. It goes beyond simple optical character recognition (OCR) to identify and extract data from forms and tables, enabling automated document processing workflows without manual review or custom code.
 image: https://a0.awsstatic.com/libra-css/images/logos/aws_logo_smile_1200x630.png
 url: https://aws.amazon.com/textract/
