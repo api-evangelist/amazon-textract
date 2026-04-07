@@ -450,13 +450,13 @@ components:
           description: The version of the model used to analyze the document.
 
 tags:
-  - name: Text Detection
-    description: Operations for detecting text in documents.
-  - name: Document Analysis
-    description: Operations for analyzing document structure and content.
   - name: Async Operations
     description: Operations for asynchronous document processing.
+  - name: Document Analysis
+    description: Operations for analyzing document structure and content.
   - name: Expense Analysis
     description: Operations for analyzing expense documents.
   - name: ID Analysis
     description: Operations for analyzing identity documents.
+  - name: Text Detection
+    description: Operations for detecting text in documents.
