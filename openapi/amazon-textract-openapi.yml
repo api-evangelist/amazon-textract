@@ -17,7 +17,7 @@ paths:
   /:
     post:
       operationId: DetectDocumentText
-      summary: Detect Document Text
+      summary: Amazon Textract Detect Document Text
       description: Detects text in the input document, returning lines and words of detected text along with confidence levels and bounding box information.
       headers:
         X-Amz-Target:
@@ -64,7 +64,7 @@ paths:
   /#AnalyzeDocument:
     post:
       operationId: AnalyzeDocument
-      summary: Analyze Document
+      summary: Amazon Textract Analyze Document
       description: Analyzes an input document for relationships between detected items, including tables, forms, and key-value pairs.
       requestBody:
         required: true
@@ -129,7 +129,7 @@ paths:
   /#StartDocumentTextDetection:
     post:
       operationId: StartDocumentTextDetection
-      summary: Start Document Text Detection
+      summary: Amazon Textract Start Document Text Detection
       description: Starts the asynchronous detection of text in a document stored in an Amazon S3 bucket.
       requestBody:
         required: true
@@ -180,7 +180,7 @@ paths:
   /#GetDocumentTextDetection:
     post:
       operationId: GetDocumentTextDetection
-      summary: Get Document Text Detection
+      summary: Amazon Textract Get Document Text Detection
       description: Gets the results for an Amazon Textract asynchronous operation that detects text in a document.
       requestBody:
         required: true
@@ -230,7 +230,7 @@ paths:
   /#AnalyzeExpense:
     post:
       operationId: AnalyzeExpense
-      summary: Analyze Expense
+      summary: Amazon Textract Analyze Expense
       description: Analyzes an input document for financially related relationships between text, returning information about expenses including vendor name, line items, and total amounts.
       requestBody:
         required: true
@@ -285,7 +285,7 @@ paths:
   /#AnalyzeID:
     post:
       operationId: AnalyzeID
-      summary: Analyze ID
+      summary: Amazon Textract Analyze ID
       description: Analyzes identity documents for relevant information including name, address, and date of birth from passports and driver's licenses.
       requestBody:
         required: true
