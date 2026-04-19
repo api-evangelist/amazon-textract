@@ -1,0 +1,25 @@
+{
+  "name": "DocumentAnalysis",
+  "description": "Schema for an Amazon Textract document analysis response containing detected blocks of text, tables, forms, and layout elements extracted from a document.",
+  "type": "object",
+  "properties": [
+    {
+      "name": "DocumentMetadata",
+      "type": "object",
+      "description": "Metadata about the analyzed document.",
+      "required": true
+    },
+    {
+      "name": "Blocks",
+      "type": "array",
+      "description": "The items detected in the document, including text lines, words, tables, and form elements.",
+      "required": true
+    },
+    {
+      "name": "AnalyzeDocumentModelVersion",
+      "type": "string",
+      "description": "The version of the model used to analyze the document.",
+      "required": false
+    }
+  ]
+}

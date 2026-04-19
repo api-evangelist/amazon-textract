@@ -1,0 +1,25 @@
+{
+  "name": "DocumentAnalysis",
+  "description": "Response object containing the results of document text detection or analysis, including detected blocks of text, tables, and forms.",
+  "type": "object",
+  "properties": [
+    {
+      "name": "DocumentMetadata",
+      "type": "object",
+      "description": "Metadata about the document.",
+      "required": false
+    },
+    {
+      "name": "Blocks",
+      "type": "array",
+      "description": "The items detected in the document.",
+      "required": false
+    },
+    {
+      "name": "AnalyzeDocumentModelVersion",
+      "type": "string",
+      "description": "The version of the model used to analyze the document.",
+      "required": false
+    }
+  ]
+}

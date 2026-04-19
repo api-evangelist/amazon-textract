@@ -1,0 +1,29 @@
+id: amazon-textract
+name: Amazon Textract
+description: Shared capability definition for Amazon Textract
+namespace: amazon-textract
+operations:
+- operationId: DetectDocumentText
+  method: POST
+  path: /
+  summary: Amazon Textract Detect Document Text
+- operationId: AnalyzeDocument
+  method: POST
+  path: /#AnalyzeDocument
+  summary: Amazon Textract Analyze Document
+- operationId: StartDocumentTextDetection
+  method: POST
+  path: /#StartDocumentTextDetection
+  summary: Amazon Textract Start Document Text Detection
+- operationId: GetDocumentTextDetection
+  method: POST
+  path: /#GetDocumentTextDetection
+  summary: Amazon Textract Get Document Text Detection
+- operationId: AnalyzeExpense
+  method: POST
+  path: /#AnalyzeExpense
+  summary: Amazon Textract Analyze Expense
+- operationId: AnalyzeID
+  method: POST
+  path: /#AnalyzeID
+  summary: Amazon Textract Analyze ID

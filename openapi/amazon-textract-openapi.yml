@@ -1,7 +1,8 @@
 openapi: 3.0.0
 info:
   title: Amazon Textract
-  description: Amazon Textract is a machine learning service that automatically extracts text, handwriting, and data from scanned documents, going beyond simple OCR to identify and extract data from forms and tables.
+  description: Amazon Textract is a machine learning service that automatically extracts text, handwriting, and data from scanned documents, going beyond simple OCR to identify and extract data from 
+    forms and tables.
   version: '2018-06-27'
   contact:
     name: Kin Lane
@@ -11,8 +12,8 @@ info:
     name: Apache 2.0
     url: https://www.apache.org/licenses/LICENSE-2.0
 servers:
-  - url: https://textract.amazonaws.com
-    description: Amazon Textract API endpoint
+- url: https://textract.amazonaws.com
+  description: Amazon Textract API endpoint
 paths:
   /:
     post:
@@ -25,7 +26,7 @@ paths:
           schema:
             type: string
             enum:
-              - Textract.DetectDocumentText
+            - Textract.DetectDocumentText
       requestBody:
         required: true
         content:
@@ -50,7 +51,7 @@ paths:
                         Version:
                           type: string
               required:
-                - Document
+              - Document
       responses:
         '200':
           description: Successful text detection response.
@@ -59,8 +60,11 @@ paths:
               schema:
                 $ref: '#/components/schemas/DocumentAnalysis'
       tags:
-        - Text Detection
+      - Text Detection
 
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
   /#AnalyzeDocument:
     post:
       operationId: AnalyzeDocument
@@ -92,11 +96,11 @@ paths:
                   items:
                     type: string
                     enum:
-                      - TABLES
-                      - FORMS
-                      - QUERIES
-                      - SIGNATURES
-                      - LAYOUT
+                    - TABLES
+                    - FORMS
+                    - QUERIES
+                    - SIGNATURES
+                    - LAYOUT
                 QueriesConfig:
                   type: object
                   properties:
@@ -114,8 +118,8 @@ paths:
                             items:
                               type: string
               required:
-                - Document
-                - FeatureTypes
+              - Document
+              - FeatureTypes
       responses:
         '200':
           description: Successful document analysis response.
@@ -124,8 +128,11 @@ paths:
               schema:
                 $ref: '#/components/schemas/DocumentAnalysis'
       tags:
-        - Document Analysis
+      - Document Analysis
 
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
   /#StartDocumentTextDetection:
     post:
       operationId: StartDocumentTextDetection
@@ -163,7 +170,7 @@ paths:
                     RoleArn:
                       type: string
               required:
-                - DocumentLocation
+              - DocumentLocation
       responses:
         '200':
           description: Asynchronous job started successfully.
@@ -175,8 +182,11 @@ paths:
                   JobId:
                     type: string
       tags:
-        - Async Operations
+      - Async Operations
 
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
   /#GetDocumentTextDetection:
     post:
       operationId: GetDocumentTextDetection
@@ -197,7 +207,7 @@ paths:
                 NextToken:
                   type: string
               required:
-                - JobId
+              - JobId
       responses:
         '200':
           description: Text detection results.
@@ -214,10 +224,10 @@ paths:
                   JobStatus:
                     type: string
                     enum:
-                      - IN_PROGRESS
-                      - SUCCEEDED
-                      - FAILED
-                      - PARTIAL_SUCCESS
+                    - IN_PROGRESS
+                    - SUCCEEDED
+                    - FAILED
+                    - PARTIAL_SUCCESS
                   Blocks:
                     type: array
                     items:
@@ -225,8 +235,11 @@ paths:
                   NextToken:
                     type: string
       tags:
-        - Async Operations
+      - Async Operations
 
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
   /#AnalyzeExpense:
     post:
       operationId: AnalyzeExpense
@@ -253,7 +266,7 @@ paths:
                         Name:
                           type: string
               required:
-                - Document
+              - Document
       responses:
         '200':
           description: Expense analysis results.
@@ -280,8 +293,11 @@ paths:
                           items:
                             type: object
       tags:
-        - Expense Analysis
+      - Expense Analysis
 
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
   /#AnalyzeID:
     post:
       operationId: AnalyzeID
@@ -311,7 +327,7 @@ paths:
                           Name:
                             type: string
               required:
-                - DocumentPages
+              - DocumentPages
       responses:
         '200':
           description: ID analysis results.
@@ -339,8 +355,11 @@ paths:
                   DocumentMetadata:
                     type: object
       tags:
-        - ID Analysis
+      - ID Analysis
 
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
 components:
   schemas:
     DocumentAnalysis:
@@ -364,30 +383,30 @@ components:
                 type: string
                 description: The type of text item detected.
                 enum:
-                  - KEY_VALUE_SET
-                  - PAGE
-                  - LINE
-                  - WORD
-                  - TABLE
-                  - CELL
-                  - SELECTION_ELEMENT
-                  - MERGED_CELL
-                  - TITLE
-                  - QUERY
-                  - QUERY_RESULT
-                  - SIGNATURE
-                  - TABLE_TITLE
-                  - TABLE_FOOTER
-                  - LAYOUT_TEXT
-                  - LAYOUT_TITLE
-                  - LAYOUT_HEADER
-                  - LAYOUT_FOOTER
-                  - LAYOUT_SECTION_HEADER
-                  - LAYOUT_PAGE_NUMBER
-                  - LAYOUT_LIST
-                  - LAYOUT_FIGURE
-                  - LAYOUT_TABLE
-                  - LAYOUT_KEY_VALUE
+                - KEY_VALUE_SET
+                - PAGE
+                - LINE
+                - WORD
+                - TABLE
+                - CELL
+                - SELECTION_ELEMENT
+                - MERGED_CELL
+                - TITLE
+                - QUERY
+                - QUERY_RESULT
+                - SIGNATURE
+                - TABLE_TITLE
+                - TABLE_FOOTER
+                - LAYOUT_TEXT
+                - LAYOUT_TITLE
+                - LAYOUT_HEADER
+                - LAYOUT_FOOTER
+                - LAYOUT_SECTION_HEADER
+                - LAYOUT_PAGE_NUMBER
+                - LAYOUT_LIST
+                - LAYOUT_FIGURE
+                - LAYOUT_TABLE
+                - LAYOUT_KEY_VALUE
               Confidence:
                 type: number
                 format: float
@@ -429,15 +448,15 @@ components:
                     Type:
                       type: string
                       enum:
-                        - VALUE
-                        - CHILD
-                        - COMPLEX_FEATURES
-                        - MERGED_CELL
-                        - TITLE
-                        - ANSWER
-                        - TABLE
-                        - TABLE_TITLE
-                        - TABLE_FOOTER
+                      - VALUE
+                      - CHILD
+                      - COMPLEX_FEATURES
+                      - MERGED_CELL
+                      - TITLE
+                      - ANSWER
+                      - TABLE
+                      - TABLE_TITLE
+                      - TABLE_FOOTER
                     Ids:
                       type: array
                       items:
@@ -450,13 +469,13 @@ components:
           description: The version of the model used to analyze the document.
 
 tags:
-  - name: Async Operations
-    description: Operations for asynchronous document processing.
-  - name: Document Analysis
-    description: Operations for analyzing document structure and content.
-  - name: Expense Analysis
-    description: Operations for analyzing expense documents.
-  - name: ID Analysis
-    description: Operations for analyzing identity documents.
-  - name: Text Detection
-    description: Operations for detecting text in documents.
+- name: Async Operations
+  description: Operations for asynchronous document processing.
+- name: Document Analysis
+  description: Operations for analyzing document structure and content.
+- name: Expense Analysis
+  description: Operations for analyzing expense documents.
+- name: ID Analysis
+  description: Operations for analyzing identity documents.
+- name: Text Detection
+  description: Operations for detecting text in documents.
