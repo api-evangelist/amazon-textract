@@ -1,0 +1,77 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Amazon Textract — Document Analysis
+  description: 'Amazon Textract — Document Analysis. 1 operations. Lead operation: Amazon Textract Analyze Document. Self-contained
+    Naftiko capability covering one Amazon Textract business surface.'
+  tags:
+  - Amazon Textract
+  - Document Analysis
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    AMAZON_TEXTRACT_API_KEY: AMAZON_TEXTRACT_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: amazon-textract-document-analysis
+    baseUri: https://textract.amazonaws.com
+    description: Amazon Textract — Document Analysis business capability. Self-contained, no shared references.
+    resources:
+    - name: '#AnalyzeDocument'
+      path: /#AnalyzeDocument
+      operations:
+      - name: analyzedocument
+        method: POST
+        description: Amazon Textract Analyze Document
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+  exposes:
+  - type: rest
+    namespace: amazon-textract-document-analysis-rest
+    port: 8080
+    description: REST adapter for Amazon Textract — Document Analysis. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/analyzedocument
+      name: analyzedocument
+      description: 'REST surface for #AnalyzeDocument.'
+      operations:
+      - method: POST
+        name: analyzedocument
+        description: Amazon Textract Analyze Document
+        call: amazon-textract-document-analysis.analyzedocument
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: amazon-textract-document-analysis-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Amazon Textract — Document Analysis. One tool per consumed operation, routed inline through
+      this capability's consumes block.
+    tools:
+    - name: amazon-textract-analyze-document
+      description: Amazon Textract Analyze Document
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-textract-document-analysis.analyzedocument
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.

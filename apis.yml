@@ -1,18 +1,16 @@
 name: Amazon Textract
-description: Amazon Textract is a machine learning service that automatically extracts text, handwriting, and structured data from scanned documents. It goes beyond simple optical character 
-  recognition (OCR) to identify and extract data from forms and tables, enabling automated document processing workflows without manual review or custom code.
+description: Amazon Textract is a machine learning service that automatically extracts text, handwriting, and structured data
+  from scanned documents. It goes beyond simple optical character recognition (OCR) to identify and extract data from forms
+  and tables, enabling automated document processing workflows without manual review or custom code.
 image: https://a0.awsstatic.com/libra-css/images/logos/aws_logo_smile_1200x630.png
 url: https://aws.amazon.com/textract/
 created: '2024-01-15'
-modified: '2026-04-19'
+modified: '2026-05-19'
 apis:
 - name: Amazon Textract API
-  description: >-
-    The Amazon Textract API provides programmatic access to extract text,
-    handwriting, and structured data from documents. It enables developers to
-    analyze documents for text detection, form extraction, table extraction,
-    and expense analysis, supporting both synchronous and asynchronous
-    processing for documents of varying sizes.
+  description: The Amazon Textract API provides programmatic access to extract text, handwriting, and structured data from
+    documents. It enables developers to analyze documents for text detection, form extraction, table extraction, and expense
+    analysis, supporting both synchronous and asynchronous processing for documents of varying sizes.
   image: https://a0.awsstatic.com/libra-css/images/logos/aws_logo_smile_1200x630.png
   humanURL: https://aws.amazon.com/textract/
   baseURL: https://textract.amazonaws.com
@@ -32,6 +30,16 @@ apis:
     url: https://aws.amazon.com/textract/getting-started/
   - type: FAQ
     url: https://aws.amazon.com/textract/faqs/
+  - type: NaftikoCapability
+    url: capabilities/amazon-textract-async-operations.yaml
+  - type: NaftikoCapability
+    url: capabilities/amazon-textract-document-analysis.yaml
+  - type: NaftikoCapability
+    url: capabilities/amazon-textract-expense-analysis.yaml
+  - type: NaftikoCapability
+    url: capabilities/amazon-textract-id-analysis.yaml
+  - type: NaftikoCapability
+    url: capabilities/amazon-textract-text-detection.yaml
 common:
 - type: Portal
   url: https://aws.amazon.com/
@@ -61,8 +69,6 @@ common:
   url: https://raw.githubusercontent.com/api-evangelist/amazon-textract/refs/heads/main/rules/amazon-textract-spectral-rules.yml
 - type: Vocabulary
   url: https://raw.githubusercontent.com/api-evangelist/amazon-textract/refs/heads/main/vocabulary/amazon-textract-vocabulary.yaml
-- type: NaftikoCapability
-  url: https://raw.githubusercontent.com/api-evangelist/amazon-textract/refs/heads/main/capabilities/amazon-textract-capability.yaml
 - type: Features
   data:
   - name: Automation
@@ -76,15 +82,15 @@ common:
 - type: Integrations
   url: https://aws.amazon.com/marketplace
 integrations:
-  - name: Sign in
-  - name: Agent Mode
-  - name: 'Why AWS Marketplace?'
-  - name: Get started in AWS Marketplace
-  - name: Industry
-  - name: Resources
-  - name: Become a Channel Partner
-  - name: Sell in AWS Marketplace
-  - name: Manage Your Account
+- name: Sign in
+- name: Agent Mode
+- name: Why AWS Marketplace?
+- name: Get started in AWS Marketplace
+- name: Industry
+- name: Resources
+- name: Become a Channel Partner
+- name: Sell in AWS Marketplace
+- name: Manage Your Account
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com

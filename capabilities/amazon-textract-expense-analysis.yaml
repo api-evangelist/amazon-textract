@@ -1,0 +1,77 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Amazon Textract — Expense Analysis
+  description: 'Amazon Textract — Expense Analysis. 1 operations. Lead operation: Amazon Textract Analyze Expense. Self-contained
+    Naftiko capability covering one Amazon Textract business surface.'
+  tags:
+  - Amazon Textract
+  - Expense Analysis
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    AMAZON_TEXTRACT_API_KEY: AMAZON_TEXTRACT_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: amazon-textract-expense-analysis
+    baseUri: https://textract.amazonaws.com
+    description: Amazon Textract — Expense Analysis business capability. Self-contained, no shared references.
+    resources:
+    - name: '#AnalyzeExpense'
+      path: /#AnalyzeExpense
+      operations:
+      - name: analyzeexpense
+        method: POST
+        description: Amazon Textract Analyze Expense
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+  exposes:
+  - type: rest
+    namespace: amazon-textract-expense-analysis-rest
+    port: 8080
+    description: REST adapter for Amazon Textract — Expense Analysis. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/analyzeexpense
+      name: analyzeexpense
+      description: 'REST surface for #AnalyzeExpense.'
+      operations:
+      - method: POST
+        name: analyzeexpense
+        description: Amazon Textract Analyze Expense
+        call: amazon-textract-expense-analysis.analyzeexpense
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: amazon-textract-expense-analysis-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Amazon Textract — Expense Analysis. One tool per consumed operation, routed inline through
+      this capability's consumes block.
+    tools:
+    - name: amazon-textract-analyze-expense
+      description: Amazon Textract Analyze Expense
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-textract-expense-analysis.analyzeexpense
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
