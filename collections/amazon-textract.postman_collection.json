@@ -1,0 +1,572 @@
+{
+  "item": [
+    {
+      "id": "8addf85a-3be8-4b7b-ac24-db0d00a91061",
+      "name": "Async Operations",
+      "description": {
+        "content": "Operations for asynchronous document processing.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "8de15270-f11d-4547-8bef-10aee4166d37",
+          "name": "Amazon Textract Start Document Text Detection",
+          "request": {
+            "name": "Amazon Textract Start Document Text Detection",
+            "description": {
+              "content": "Starts the asynchronous detection of text in a document stored in an Amazon S3 bucket.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                ""
+              ],
+              "hash": "StartDocumentTextDetection",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-amz-json-1.1"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"DocumentLocation\": {\n    \"S3Object\": {\n      \"Bucket\": \"<string>\",\n      \"Name\": \"<string>\",\n      \"Version\": \"<string>\"\n    }\n  },\n  \"ClientRequestToken\": \"<string>\",\n  \"JobTag\": \"<string>\",\n  \"NotificationChannel\": {\n    \"SNSTopicArn\": \"<string>\",\n    \"RoleArn\": \"<string>\"\n  }\n}"
+            }
+          },
+          "response": [
+            {
+              "id": "b6504809-9930-424b-b44e-59d198aa2157",
+              "name": "Asynchronous job started successfully.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ""
+                  ],
+                  "hash": "StartDocumentTextDetection",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"DocumentLocation\": {\n    \"S3Object\": {\n      \"Bucket\": \"<string>\",\n      \"Name\": \"<string>\",\n      \"Version\": \"<string>\"\n    }\n  },\n  \"ClientRequestToken\": \"<string>\",\n  \"JobTag\": \"<string>\",\n  \"NotificationChannel\": {\n    \"SNSTopicArn\": \"<string>\",\n    \"RoleArn\": \"<string>\"\n  }\n}"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"JobId\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d54cb8f0-cdda-43ef-b735-fda3e5d68301",
+          "name": "Amazon Textract Get Document Text Detection",
+          "request": {
+            "name": "Amazon Textract Get Document Text Detection",
+            "description": {
+              "content": "Gets the results for an Amazon Textract asynchronous operation that detects text in a document.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                ""
+              ],
+              "hash": "GetDocumentTextDetection",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-amz-json-1.1"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"JobId\": \"<string>\",\n  \"MaxResults\": \"<integer>\",\n  \"NextToken\": \"<string>\"\n}"
+            }
+          },
+          "response": [
+            {
+              "id": "02526820-4762-4367-a688-e394ed55d621",
+              "name": "Text detection results.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ""
+                  ],
+                  "hash": "GetDocumentTextDetection",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"JobId\": \"<string>\",\n  \"MaxResults\": \"<integer>\",\n  \"NextToken\": \"<string>\"\n}"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"DocumentMetadata\": {\n    \"Pages\": 2886\n  },\n  \"JobStatus\": \"FAILED\",\n  \"NextToken\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "fb1a622f-a34c-4592-8f03-eadb76f2c9ba",
+      "name": "Document Analysis",
+      "description": {
+        "content": "Operations for analyzing document structure and content.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "a7a3f2a8-bd28-4679-8e1b-db38d7750519",
+          "name": "Amazon Textract Analyze Document",
+          "request": {
+            "name": "Amazon Textract Analyze Document",
+            "description": {
+              "content": "Analyzes an input document for relationships between detected items, including tables, forms, and key-value pairs.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                ""
+              ],
+              "hash": "AnalyzeDocument",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-amz-json-1.1"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"Document\": {\n    \"Bytes\": \"<byte>\",\n    \"S3Object\": {\n      \"Bucket\": \"<string>\",\n      \"Name\": \"<string>\"\n    }\n  },\n  \"FeatureTypes\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"QueriesConfig\": {\n    \"Queries\": [\n      {\n        \"Text\": \"<string>\",\n        \"Alias\": \"<string>\",\n        \"Pages\": [\n          \"<string>\",\n          \"<string>\"\n        ]\n      },\n      {\n        \"Text\": \"<string>\",\n        \"Alias\": \"<string>\",\n        \"Pages\": [\n          \"<string>\",\n          \"<string>\"\n        ]\n      }\n    ]\n  }\n}"
+            }
+          },
+          "response": [
+            {
+              "id": "dd15e362-c60e-4190-b8e6-01f8ec8f167a",
+              "name": "Successful document analysis response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ""
+                  ],
+                  "hash": "AnalyzeDocument",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Document\": {\n    \"Bytes\": \"<byte>\",\n    \"S3Object\": {\n      \"Bucket\": \"<string>\",\n      \"Name\": \"<string>\"\n    }\n  },\n  \"FeatureTypes\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"QueriesConfig\": {\n    \"Queries\": [\n      {\n        \"Text\": \"<string>\",\n        \"Alias\": \"<string>\",\n        \"Pages\": [\n          \"<string>\",\n          \"<string>\"\n        ]\n      },\n      {\n        \"Text\": \"<string>\",\n        \"Alias\": \"<string>\",\n        \"Pages\": [\n          \"<string>\",\n          \"<string>\"\n        ]\n      }\n    ]\n  }\n}"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"DocumentMetadata\": {\n    \"Pages\": 2847\n  },\n  \"Blocks\": [\n    {\n      \"BlockType\": \"LINE\",\n      \"Confidence\": 9489.968892374502,\n      \"Text\": \"string\",\n      \"Geometry\": {\n        \"BoundingBox\": {\n          \"Width\": 3407.067992070765,\n          \"Height\": 9344.492354206097,\n          \"Left\": 1715.6419601153107,\n          \"Top\": 2417.804363787598\n        },\n        \"Polygon\": [\n          {\n            \"X\": 9868.300574983561,\n            \"Y\": 8968.316248356952\n          },\n          {\n            \"X\": 662.5548550619598,\n            \"Y\": 1762.097152741252\n          }\n        ]\n      },\n      \"Id\": \"string\",\n      \"Relationships\": [\n        {\n          \"Type\": \"TITLE\",\n          \"Ids\": [\n            \"string\",\n            \"string\"\n          ]\n        },\n        {\n          \"Type\": \"ANSWER\",\n          \"Ids\": [\n            \"string\",\n            \"string\"\n          ]\n        }\n      ],\n      \"Page\": 9093\n    },\n    {\n      \"BlockType\": \"LINE\",\n      \"Confidence\": 3986.6276436127846,\n      \"Text\": \"string\",\n      \"Geometry\": {\n        \"BoundingBox\": {\n          \"Width\": 4535.682487246855,\n          \"Height\": 229.13824009111684,\n          \"Left\": 3841.924852288283,\n          \"Top\": 5494.3081543988\n        },\n        \"Polygon\": [\n          {\n            \"X\": 3095.287667410167,\n            \"Y\": 5196.645132850094\n          },\n          {\n            \"X\": 4381.133196893594,\n            \"Y\": 1941.8545526976006\n          }\n        ]\n      },\n      \"Id\": \"string\",\n      \"Relationships\": [\n        {\n          \"Type\": \"TABLE_TITLE\",\n          \"Ids\": [\n            \"string\",\n            \"string\"\n          ]\n        },\n        {\n          \"Type\": \"ANSWER\",\n          \"Ids\": [\n            \"string\",\n            \"string\"\n          ]\n        }\n      ],\n      \"Page\": 6402\n    }\n  ],\n  \"AnalyzeDocumentModelVersion\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "e0e46f09-b2a4-42f8-948a-e5c0e560f293",
+      "name": "Expense Analysis",
+      "description": {
+        "content": "Operations for analyzing expense documents.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "c772ccdb-dae3-4861-952a-d1790d886ea9",
+          "name": "Amazon Textract Analyze Expense",
+          "request": {
+            "name": "Amazon Textract Analyze Expense",
+            "description": {
+              "content": "Analyzes an input document for financially related relationships between text, returning information about expenses including vendor name, line items, and total amounts.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                ""
+              ],
+              "hash": "AnalyzeExpense",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-amz-json-1.1"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"Document\": {\n    \"Bytes\": \"<byte>\",\n    \"S3Object\": {\n      \"Bucket\": \"<string>\",\n      \"Name\": \"<string>\"\n    }\n  }\n}"
+            }
+          },
+          "response": [
+            {
+              "id": "e7ae0a75-81a3-4695-98c0-356dbf490a19",
+              "name": "Expense analysis results.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ""
+                  ],
+                  "hash": "AnalyzeExpense",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Document\": {\n    \"Bytes\": \"<byte>\",\n    \"S3Object\": {\n      \"Bucket\": \"<string>\",\n      \"Name\": \"<string>\"\n    }\n  }\n}"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"DocumentMetadata\": {},\n  \"ExpenseDocuments\": [\n    {\n      \"ExpenseIndex\": 2088\n    },\n    {\n      \"ExpenseIndex\": 6834\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "8f6e5b8e-eb70-4ceb-b799-778f447b1cf8",
+      "name": "ID Analysis",
+      "description": {
+        "content": "Operations for analyzing identity documents.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "8f20d207-5ceb-42d5-9efe-dabc1a05be4d",
+          "name": "Amazon Textract Analyze ID",
+          "request": {
+            "name": "Amazon Textract Analyze ID",
+            "description": {
+              "content": "Analyzes identity documents for relevant information including name, address, and date of birth from passports and driver's licenses.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                ""
+              ],
+              "hash": "AnalyzeID",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-amz-json-1.1"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"DocumentPages\": [\n    {\n      \"Bytes\": \"<byte>\",\n      \"S3Object\": {\n        \"Bucket\": \"<string>\",\n        \"Name\": \"<string>\"\n      }\n    },\n    {\n      \"Bytes\": \"<byte>\",\n      \"S3Object\": {\n        \"Bucket\": \"<string>\",\n        \"Name\": \"<string>\"\n      }\n    }\n  ]\n}"
+            }
+          },
+          "response": [
+            {
+              "id": "5781439f-51fc-470b-a323-c280d9bca216",
+              "name": "ID analysis results.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ""
+                  ],
+                  "hash": "AnalyzeID",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"DocumentPages\": [\n    {\n      \"Bytes\": \"<byte>\",\n      \"S3Object\": {\n        \"Bucket\": \"<string>\",\n        \"Name\": \"<string>\"\n      }\n    },\n    {\n      \"Bytes\": \"<byte>\",\n      \"S3Object\": {\n        \"Bucket\": \"<string>\",\n        \"Name\": \"<string>\"\n      }\n    }\n  ]\n}"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"IdentityDocuments\": [\n    {\n      \"DocumentIndex\": 8816,\n      \"IdentityDocumentFields\": [\n        {\n          \"Type\": {},\n          \"ValueDetection\": {}\n        },\n        {\n          \"Type\": {},\n          \"ValueDetection\": {}\n        }\n      ]\n    },\n    {\n      \"DocumentIndex\": 5510,\n      \"IdentityDocumentFields\": [\n        {\n          \"Type\": {},\n          \"ValueDetection\": {}\n        },\n        {\n          \"Type\": {},\n          \"ValueDetection\": {}\n        }\n      ]\n    }\n  ],\n  \"DocumentMetadata\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "e3aa4460-d521-426c-a67c-d81700bc5573",
+      "name": "Text Detection",
+      "description": {
+        "content": "Operations for detecting text in documents.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "bcacde6f-97fb-4793-a87e-58ea9919f794",
+          "name": "Amazon Textract Detect Document Text",
+          "request": {
+            "name": "Amazon Textract Detect Document Text",
+            "description": {
+              "content": "Detects text in the input document, returning lines and words of detected text along with confidence levels and bounding box information.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-amz-json-1.1"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"Document\": {\n    \"Bytes\": \"<byte>\",\n    \"S3Object\": {\n      \"Bucket\": \"<string>\",\n      \"Name\": \"<string>\",\n      \"Version\": \"<string>\"\n    }\n  }\n}"
+            }
+          },
+          "response": [
+            {
+              "id": "64979f96-a88c-44cb-8c8f-82eb6e9eb87c",
+              "name": "Successful text detection response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Document\": {\n    \"Bytes\": \"<byte>\",\n    \"S3Object\": {\n      \"Bucket\": \"<string>\",\n      \"Name\": \"<string>\",\n      \"Version\": \"<string>\"\n    }\n  }\n}"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"DocumentMetadata\": {\n    \"Pages\": 144\n  },\n  \"Blocks\": [\n    {\n      \"BlockType\": \"KEY_VALUE_SET\",\n      \"Confidence\": 4664.652420025056,\n      \"Text\": \"string\",\n      \"Geometry\": {\n        \"BoundingBox\": {\n          \"Width\": 3737.767434658145,\n          \"Height\": 3251.2993754240315,\n          \"Left\": 7740.2283192836285,\n          \"Top\": 9924.645889625464\n        },\n        \"Polygon\": [\n          {\n            \"X\": 3603.718768066301,\n            \"Y\": 6284.5653649637425\n          },\n          {\n            \"X\": 2808.084085577226,\n            \"Y\": 4934.729869245708\n          }\n        ]\n      },\n      \"Id\": \"string\",\n      \"Relationships\": [\n        {\n          \"Type\": \"TABLE_FOOTER\",\n          \"Ids\": [\n            \"string\",\n            \"string\"\n          ]\n        },\n        {\n          \"Type\": \"TITLE\",\n          \"Ids\": [\n            \"string\",\n            \"string\"\n          ]\n        }\n      ],\n      \"Page\": 8569\n    },\n    {\n      \"BlockType\": \"LINE\",\n      \"Confidence\": 7604.443246515502,\n      \"Text\": \"string\",\n      \"Geometry\": {\n        \"BoundingBox\": {\n          \"Width\": 7630.266967016264,\n          \"Height\": 3620.078869262089,\n          \"Left\": 5569.512401751663,\n          \"Top\": 1253.7411513443963\n        },\n        \"Polygon\": [\n          {\n            \"X\": 3226.926055901129,\n            \"Y\": 2340.6638000622693\n          },\n          {\n            \"X\": 7277.707002105449,\n            \"Y\": 4365.837518634559\n          }\n        ]\n      },\n      \"Id\": \"string\",\n      \"Relationships\": [\n        {\n          \"Type\": \"TITLE\",\n          \"Ids\": [\n            \"string\",\n            \"string\"\n          ]\n        },\n        {\n          \"Type\": \"CHILD\",\n          \"Ids\": [\n            \"string\",\n            \"string\"\n          ]\n        }\n      ],\n      \"Page\": 7767\n    }\n  ],\n  \"AnalyzeDocumentModelVersion\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://textract.amazonaws.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "ee5769d1-18a9-4601-943d-210f795d7523",
+    "name": "Amazon Textract",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Amazon Textract is a machine learning service that automatically extracts text, handwriting, and data from scanned documents, going beyond simple OCR to identify and extract data from forms and tables.\n\nContact Support:\n Name: Kin Lane\n Email: kin@apievangelist.com",
+      "type": "text/plain"
+    }
+  }
+}

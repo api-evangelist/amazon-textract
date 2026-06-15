@@ -1,0 +1,140 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Amazon Textract",
+    "version": "2018-06-27"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Text Detection",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Amazon Textract Detect Document Text",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://textract.amazonaws.com/",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Detects text in the input document, returning lines and words of detected text along with confidence levels and bounding box information."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Document Analysis",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Amazon Textract Analyze Document",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://textract.amazonaws.com/#AnalyzeDocument",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Analyzes an input document for relationships between detected items, including tables, forms, and key-value pairs."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Async Operations",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Amazon Textract Start Document Text Detection",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://textract.amazonaws.com/#StartDocumentTextDetection",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Starts the asynchronous detection of text in a document stored in an Amazon S3 bucket."
+        },
+        {
+          "info": {
+            "name": "Amazon Textract Get Document Text Detection",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://textract.amazonaws.com/#GetDocumentTextDetection",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Gets the results for an Amazon Textract asynchronous operation that detects text in a document."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Expense Analysis",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Amazon Textract Analyze Expense",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://textract.amazonaws.com/#AnalyzeExpense",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Analyzes an input document for financially related relationships between text, returning information about expenses including vendor name, line items, and total amounts."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "ID Analysis",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Amazon Textract Analyze ID",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://textract.amazonaws.com/#AnalyzeID",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Analyzes identity documents for relevant information including name, address, and date of birth from passports and driver's licenses."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
