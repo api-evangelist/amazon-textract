@@ -34,6 +34,12 @@ apis:
       - type: FAQ
         url: https://aws.amazon.com/textract/faqs/
 common:
+  - type: TrustCenter
+    url: security/amazon-textract-trust-center.yml
+  - type: VulnerabilityDisclosure
+    url: security/amazon-textract-vulnerability-disclosure.yml
+  - type: DomainSecurity
+    url: security/amazon-textract-domain-security.yml
   - type: Portal
     url: https://aws.amazon.com/
   - type: Website
