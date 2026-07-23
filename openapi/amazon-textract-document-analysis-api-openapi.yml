@@ -1,0 +1,193 @@
+openapi: 3.0.0
+info:
+  title: Amazon Textract Async Operations Document Analysis API
+  description: Amazon Textract is a machine learning service that automatically extracts text, handwriting, and data from scanned documents, going beyond simple OCR to identify and extract data from forms and tables.
+  version: '2018-06-27'
+  contact:
+    name: Kin Lane
+    email: kin@apievangelist.com
+    url: https://aws.amazon.com/textract/
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0
+servers:
+- url: https://textract.amazonaws.com
+  description: Amazon Textract API endpoint
+tags:
+- name: Document Analysis
+  description: Operations for analyzing document structure and content.
+paths:
+  /#AnalyzeDocument:
+    post:
+      operationId: AnalyzeDocument
+      summary: Amazon Textract Analyze Document
+      description: Analyzes an input document for relationships between detected items, including tables, forms, and key-value pairs.
+      requestBody:
+        required: true
+        content:
+          application/x-amz-json-1.1:
+            schema:
+              type: object
+              properties:
+                Document:
+                  type: object
+                  properties:
+                    Bytes:
+                      type: string
+                      format: byte
+                    S3Object:
+                      type: object
+                      properties:
+                        Bucket:
+                          type: string
+                        Name:
+                          type: string
+                FeatureTypes:
+                  type: array
+                  description: A list of the types of analysis to perform.
+                  items:
+                    type: string
+                    enum:
+                    - TABLES
+                    - FORMS
+                    - QUERIES
+                    - SIGNATURES
+                    - LAYOUT
+                QueriesConfig:
+                  type: object
+                  properties:
+                    Queries:
+                      type: array
+                      items:
+                        type: object
+                        properties:
+                          Text:
+                            type: string
+                          Alias:
+                            type: string
+                          Pages:
+                            type: array
+                            items:
+                              type: string
+              required:
+              - Document
+              - FeatureTypes
+      responses:
+        '200':
+          description: Successful document analysis response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DocumentAnalysis'
+      tags:
+      - Document Analysis
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+components:
+  schemas:
+    DocumentAnalysis:
+      type: object
+      description: Response object containing the results of document text detection or analysis, including detected blocks of text, tables, and forms.
+      properties:
+        DocumentMetadata:
+          type: object
+          description: Metadata about the document.
+          properties:
+            Pages:
+              type: integer
+              description: The number of pages detected in the document.
+        Blocks:
+          type: array
+          description: The items detected in the document.
+          items:
+            type: object
+            properties:
+              BlockType:
+                type: string
+                description: The type of text item detected.
+                enum:
+                - KEY_VALUE_SET
+                - PAGE
+                - LINE
+                - WORD
+                - TABLE
+                - CELL
+                - SELECTION_ELEMENT
+                - MERGED_CELL
+                - TITLE
+                - QUERY
+                - QUERY_RESULT
+                - SIGNATURE
+                - TABLE_TITLE
+                - TABLE_FOOTER
+                - LAYOUT_TEXT
+                - LAYOUT_TITLE
+                - LAYOUT_HEADER
+                - LAYOUT_FOOTER
+                - LAYOUT_SECTION_HEADER
+                - LAYOUT_PAGE_NUMBER
+                - LAYOUT_LIST
+                - LAYOUT_FIGURE
+                - LAYOUT_TABLE
+                - LAYOUT_KEY_VALUE
+              Confidence:
+                type: number
+                format: float
+                description: The confidence score for the detected block.
+              Text:
+                type: string
+                description: The word or line of text recognized.
+              Geometry:
+                type: object
+                properties:
+                  BoundingBox:
+                    type: object
+                    properties:
+                      Width:
+                        type: number
+                      Height:
+                        type: number
+                      Left:
+                        type: number
+                      Top:
+                        type: number
+                  Polygon:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        X:
+                          type: number
+                        Y:
+                          type: number
+              Id:
+                type: string
+                description: The identifier for the recognized text block.
+              Relationships:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    Type:
+                      type: string
+                      enum:
+                      - VALUE
+                      - CHILD
+                      - COMPLEX_FEATURES
+                      - MERGED_CELL
+                      - TITLE
+                      - ANSWER
+                      - TABLE
+                      - TABLE_TITLE
+                      - TABLE_FOOTER
+                    Ids:
+                      type: array
+                      items:
+                        type: string
+              Page:
+                type: integer
+                description: The page on which the block was detected.
+        AnalyzeDocumentModelVersion:
+          type: string
+          description: The version of the model used to analyze the document.

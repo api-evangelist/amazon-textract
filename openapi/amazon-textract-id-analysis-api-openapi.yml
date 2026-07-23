@@ -1,0 +1,80 @@
+openapi: 3.0.0
+info:
+  title: Amazon Textract Async Operations ID Analysis API
+  description: Amazon Textract is a machine learning service that automatically extracts text, handwriting, and data from scanned documents, going beyond simple OCR to identify and extract data from forms and tables.
+  version: '2018-06-27'
+  contact:
+    name: Kin Lane
+    email: kin@apievangelist.com
+    url: https://aws.amazon.com/textract/
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0
+servers:
+- url: https://textract.amazonaws.com
+  description: Amazon Textract API endpoint
+tags:
+- name: ID Analysis
+  description: Operations for analyzing identity documents.
+paths:
+  /#AnalyzeID:
+    post:
+      operationId: AnalyzeID
+      summary: Amazon Textract Analyze ID
+      description: Analyzes identity documents for relevant information including name, address, and date of birth from passports and driver's licenses.
+      requestBody:
+        required: true
+        content:
+          application/x-amz-json-1.1:
+            schema:
+              type: object
+              properties:
+                DocumentPages:
+                  type: array
+                  description: The document pages to analyze.
+                  items:
+                    type: object
+                    properties:
+                      Bytes:
+                        type: string
+                        format: byte
+                      S3Object:
+                        type: object
+                        properties:
+                          Bucket:
+                            type: string
+                          Name:
+                            type: string
+              required:
+              - DocumentPages
+      responses:
+        '200':
+          description: ID analysis results.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  IdentityDocuments:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        DocumentIndex:
+                          type: integer
+                        IdentityDocumentFields:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              Type:
+                                type: object
+                              ValueDetection:
+                                type: object
+                  DocumentMetadata:
+                    type: object
+      tags:
+      - ID Analysis
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK

@@ -1,0 +1,76 @@
+openapi: 3.0.0
+info:
+  title: Amazon Textract Async Operations Expense Analysis API
+  description: Amazon Textract is a machine learning service that automatically extracts text, handwriting, and data from scanned documents, going beyond simple OCR to identify and extract data from forms and tables.
+  version: '2018-06-27'
+  contact:
+    name: Kin Lane
+    email: kin@apievangelist.com
+    url: https://aws.amazon.com/textract/
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0
+servers:
+- url: https://textract.amazonaws.com
+  description: Amazon Textract API endpoint
+tags:
+- name: Expense Analysis
+  description: Operations for analyzing expense documents.
+paths:
+  /#AnalyzeExpense:
+    post:
+      operationId: AnalyzeExpense
+      summary: Amazon Textract Analyze Expense
+      description: Analyzes an input document for financially related relationships between text, returning information about expenses including vendor name, line items, and total amounts.
+      requestBody:
+        required: true
+        content:
+          application/x-amz-json-1.1:
+            schema:
+              type: object
+              properties:
+                Document:
+                  type: object
+                  properties:
+                    Bytes:
+                      type: string
+                      format: byte
+                    S3Object:
+                      type: object
+                      properties:
+                        Bucket:
+                          type: string
+                        Name:
+                          type: string
+              required:
+              - Document
+      responses:
+        '200':
+          description: Expense analysis results.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  DocumentMetadata:
+                    type: object
+                  ExpenseDocuments:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        ExpenseIndex:
+                          type: integer
+                        SummaryFields:
+                          type: array
+                          items:
+                            type: object
+                        LineItemGroups:
+                          type: array
+                          items:
+                            type: object
+      tags:
+      - Expense Analysis
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
