@@ -3,37 +3,116 @@ description: >-
   Amazon Textract is a machine learning service that automatically extracts text, handwriting, and structured data from
   scanned documents. It goes beyond simple optical character recognition (OCR) to identify and extract data from forms
   and tables, enabling automated document processing workflows without manual review or custom code.
+accessModel:
+  pricing: freemium
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Freemium
+  confidence: medium
+  source:
+  - plans
+  generated: '2026-07-22'
+  method: derived
 image: https://a0.awsstatic.com/libra-css/images/logos/aws_logo_smile_1200x630.png
 url: https://aws.amazon.com/textract/
 created: '2024-01-15'
 modified: '2026-05-19'
 apis:
-  - name: Amazon Textract API
-    description: >-
-      The Amazon Textract API provides programmatic access to extract text, handwriting, and structured data from
-      documents. It enables developers to analyze documents for text detection, form extraction, table extraction, and
-      expense analysis, supporting both synchronous and asynchronous processing for documents of varying sizes.
-    image: https://a0.awsstatic.com/libra-css/images/logos/aws_logo_smile_1200x630.png
-    humanURL: https://aws.amazon.com/textract/
-    baseURL: https://textract.amazonaws.com
-    tags:
-      - AWS
-      - Document Processing
-      - Machine Learning
-      - OCR
-    properties:
-      - type: Documentation
-        url: https://docs.aws.amazon.com/textract/
-      - type: OpenAPI
-        url: >-
-          https://raw.githubusercontent.com/api-evangelist/amazon-textract/refs/heads/main/openapi/amazon-textract-openapi.yml
-      - type: Pricing
-        url: https://aws.amazon.com/textract/pricing/
-      - type: GettingStarted
-        url: https://aws.amazon.com/textract/getting-started/
-      - type: FAQ
-        url: https://aws.amazon.com/textract/faqs/
+- aid: amazon-textract:amazon-textract-async-operations-api
+  name: Amazon Textract Async Operations API
+  description: Operations for asynchronous document processing.
+  humanURL: https://aws.amazon.com/textract/
+  baseURL: https://textract.amazonaws.com
+  tags:
+  - Async Operations
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-textract-async-operations-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/textract/
+  - type: Pricing
+    url: https://aws.amazon.com/textract/pricing/
+  - type: GettingStarted
+    url: https://aws.amazon.com/textract/getting-started/
+  - type: FAQ
+    url: https://aws.amazon.com/textract/faqs/
+- aid: amazon-textract:amazon-textract-document-analysis-api
+  name: Amazon Textract Document Analysis API
+  description: Operations for analyzing document structure and content.
+  humanURL: https://aws.amazon.com/textract/
+  baseURL: https://textract.amazonaws.com
+  tags:
+  - Document Analysis
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-textract-document-analysis-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/textract/
+  - type: Pricing
+    url: https://aws.amazon.com/textract/pricing/
+  - type: GettingStarted
+    url: https://aws.amazon.com/textract/getting-started/
+  - type: FAQ
+    url: https://aws.amazon.com/textract/faqs/
+- aid: amazon-textract:amazon-textract-expense-analysis-api
+  name: Amazon Textract Expense Analysis API
+  description: Operations for analyzing expense documents.
+  humanURL: https://aws.amazon.com/textract/
+  baseURL: https://textract.amazonaws.com
+  tags:
+  - Expense Analysis
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-textract-expense-analysis-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/textract/
+  - type: Pricing
+    url: https://aws.amazon.com/textract/pricing/
+  - type: GettingStarted
+    url: https://aws.amazon.com/textract/getting-started/
+  - type: FAQ
+    url: https://aws.amazon.com/textract/faqs/
+- aid: amazon-textract:amazon-textract-id-analysis-api
+  name: Amazon Textract ID Analysis API
+  description: Operations for analyzing identity documents.
+  humanURL: https://aws.amazon.com/textract/
+  baseURL: https://textract.amazonaws.com
+  tags:
+  - ID Analysis
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-textract-id-analysis-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/textract/
+  - type: Pricing
+    url: https://aws.amazon.com/textract/pricing/
+  - type: GettingStarted
+    url: https://aws.amazon.com/textract/getting-started/
+  - type: FAQ
+    url: https://aws.amazon.com/textract/faqs/
+- aid: amazon-textract:amazon-textract-text-detection-api
+  name: Amazon Textract Text Detection API
+  description: Operations for detecting text in documents.
+  humanURL: https://aws.amazon.com/textract/
+  baseURL: https://textract.amazonaws.com
+  tags:
+  - Text Detection
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-textract-text-detection-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/textract/
+  - type: Pricing
+    url: https://aws.amazon.com/textract/pricing/
+  - type: GettingStarted
+    url: https://aws.amazon.com/textract/getting-started/
+  - type: FAQ
+    url: https://aws.amazon.com/textract/faqs/
 common:
+  - type: PostmanWorkspace
+    url: https://www.postman.com/kinlaneapi/amazon-textract/overview
   - type: AgenticAccess
     url: agentic-access/amazon-textract-agentic-access.yml
   - type: TrustCenter
