@@ -1,0 +1,115 @@
+{
+  "info": {
+    "_postman_id": "7c36f081-2f3d-471f-89e1-475dcea4c761",
+    "name": "Amazon Textract Async Operations Document Analysis API",
+    "description": "Amazon Textract is a machine learning service that automatically extracts text, handwriting, and data from scanned documents, going beyond simple OCR to identify and extract data from forms and tables.\n\nContact Support:\n Name: Kin Lane\n Email: kin@apievangelist.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T00:56:31.000Z",
+    "updatedAt": "2026-07-28T00:56:31.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-7c36f081-2f3d-471f-89e1-475dcea4c761"
+  },
+  "item": [
+    {
+      "name": "#AnalyzeDocument",
+      "item": [
+        {
+          "name": "Amazon Textract Analyze Document",
+          "id": "647aaadd-3a55-4589-a02e-9ff8cba3dd6f",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-amz-json-1.1"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"Document\": {\n    \"Bytes\": \"<string>\",\n    \"S3Object\": {\n      \"Bucket\": \"<string>\",\n      \"Name\": \"<string>\"\n    }\n  },\n  \"FeatureTypes\": [\n    \"QUERIES\",\n    \"QUERIES\"\n  ],\n  \"QueriesConfig\": {\n    \"Queries\": [\n      {\n        \"Text\": \"<string>\",\n        \"Alias\": \"<string>\",\n        \"Pages\": [\n          \"<string>\",\n          \"<string>\"\n        ]\n      },\n      {\n        \"Text\": \"<string>\",\n        \"Alias\": \"<string>\",\n        \"Pages\": [\n          \"<string>\",\n          \"<string>\"\n        ]\n      }\n    ]\n  }\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/#AnalyzeDocument",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                ""
+              ],
+              "hash": "AnalyzeDocument"
+            },
+            "description": "Analyzes an input document for relationships between detected items, including tables, forms, and key-value pairs."
+          },
+          "response": [
+            {
+              "id": "dfb0c1e5-2699-4cb9-b15e-3c8ff5f85a8a",
+              "name": "Successful document analysis response.",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/x-amz-json-1.1"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Document\": {\n    \"Bytes\": \"<string>\",\n    \"S3Object\": {\n      \"Bucket\": \"<string>\",\n      \"Name\": \"<string>\"\n    }\n  },\n  \"FeatureTypes\": [\n    \"QUERIES\",\n    \"QUERIES\"\n  ],\n  \"QueriesConfig\": {\n    \"Queries\": [\n      {\n        \"Text\": \"<string>\",\n        \"Alias\": \"<string>\",\n        \"Pages\": [\n          \"<string>\",\n          \"<string>\"\n        ]\n      },\n      {\n        \"Text\": \"<string>\",\n        \"Alias\": \"<string>\",\n        \"Pages\": [\n          \"<string>\",\n          \"<string>\"\n        ]\n      }\n    ]\n  }\n}"
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#AnalyzeDocument",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "AnalyzeDocument"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"DocumentMetadata\": {\n    \"Pages\": \"<integer>\"\n  },\n  \"Blocks\": [\n    {\n      \"BlockType\": \"LAYOUT_TITLE\",\n      \"Confidence\": \"<float>\",\n      \"Text\": \"<string>\",\n      \"Geometry\": {\n        \"BoundingBox\": {\n          \"Width\": \"<number>\",\n          \"Height\": \"<number>\",\n          \"Left\": \"<number>\",\n          \"Top\": \"<number>\"\n        },\n        \"Polygon\": [\n          {\n            \"X\": \"<number>\",\n            \"Y\": \"<number>\"\n          },\n          {\n            \"X\": \"<number>\",\n            \"Y\": \"<number>\"\n          }\n        ]\n      },\n      \"Id\": \"<string>\",\n      \"Relationships\": [\n        {\n          \"Type\": \"TITLE\",\n          \"Ids\": [\n            \"<string>\",\n            \"<string>\"\n          ]\n        },\n        {\n          \"Type\": \"TABLE_FOOTER\",\n          \"Ids\": [\n            \"<string>\",\n            \"<string>\"\n          ]\n        }\n      ],\n      \"Page\": \"<integer>\"\n    },\n    {\n      \"BlockType\": \"KEY_VALUE_SET\",\n      \"Confidence\": \"<float>\",\n      \"Text\": \"<string>\",\n      \"Geometry\": {\n        \"BoundingBox\": {\n          \"Width\": \"<number>\",\n          \"Height\": \"<number>\",\n          \"Left\": \"<number>\",\n          \"Top\": \"<number>\"\n        },\n        \"Polygon\": [\n          {\n            \"X\": \"<number>\",\n            \"Y\": \"<number>\"\n          },\n          {\n            \"X\": \"<number>\",\n            \"Y\": \"<number>\"\n          }\n        ]\n      },\n      \"Id\": \"<string>\",\n      \"Relationships\": [\n        {\n          \"Type\": \"TABLE_FOOTER\",\n          \"Ids\": [\n            \"<string>\",\n            \"<string>\"\n          ]\n        },\n        {\n          \"Type\": \"TITLE\",\n          \"Ids\": [\n            \"<string>\",\n            \"<string>\"\n          ]\n        }\n      ],\n      \"Page\": \"<integer>\"\n    }\n  ],\n  \"AnalyzeDocumentModelVersion\": \"<string>\"\n}",
+              "createdAt": "2026-07-28T00:56:31.000Z",
+              "updatedAt": "2026-07-28T00:56:31.000Z",
+              "uid": "35240-dfb0c1e5-2699-4cb9-b15e-3c8ff5f85a8a"
+            }
+          ],
+          "createdAt": "2026-07-28T00:56:31.000Z",
+          "updatedAt": "2026-07-28T00:56:31.000Z",
+          "uid": "35240-647aaadd-3a55-4589-a02e-9ff8cba3dd6f"
+        }
+      ],
+      "id": "3ab65267-b8bc-4ccb-aa3d-f93a874d06e8",
+      "createdAt": "2026-07-28T00:56:31.000Z",
+      "updatedAt": "2026-07-28T00:56:31.000Z",
+      "uid": "35240-3ab65267-b8bc-4ccb-aa3d-f93a874d06e8"
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://textract.amazonaws.com"
+    }
+  ]
+}

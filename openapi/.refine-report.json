@@ -1,0 +1,22 @@
+{
+  "provider": "amazon-textract",
+  "sources": [
+    "amazon-textract-async-operations-api-openapi.yml",
+    "amazon-textract-document-analysis-api-openapi.yml",
+    "amazon-textract-expense-analysis-api-openapi.yml",
+    "amazon-textract-id-analysis-api-openapi.yml",
+    "amazon-textract-text-detection-api-openapi.yml"
+  ],
+  "outputs": [
+    "amazon-textract-async-operations-api-openapi.yml",
+    "amazon-textract-document-analysis-api-openapi.yml",
+    "amazon-textract-expense-analysis-api-openapi.yml",
+    "amazon-textract-id-analysis-api-openapi.yml",
+    "amazon-textract-text-detection-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

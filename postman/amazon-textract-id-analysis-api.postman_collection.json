@@ -1,0 +1,115 @@
+{
+  "info": {
+    "_postman_id": "b014f742-726b-40b9-acba-1e3017f86574",
+    "name": "Amazon Textract Async Operations ID Analysis API",
+    "description": "Amazon Textract is a machine learning service that automatically extracts text, handwriting, and data from scanned documents, going beyond simple OCR to identify and extract data from forms and tables.\n\nContact Support:\n Name: Kin Lane\n Email: kin@apievangelist.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T00:56:38.000Z",
+    "updatedAt": "2026-07-28T00:56:38.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-b014f742-726b-40b9-acba-1e3017f86574"
+  },
+  "item": [
+    {
+      "name": "#AnalyzeID",
+      "item": [
+        {
+          "name": "Amazon Textract Analyze ID",
+          "id": "efbdc468-cecb-4e6b-92b7-53496503fc16",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-amz-json-1.1"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"DocumentPages\": [\n    {\n      \"Bytes\": \"<string>\",\n      \"S3Object\": {\n        \"Bucket\": \"<string>\",\n        \"Name\": \"<string>\"\n      }\n    },\n    {\n      \"Bytes\": \"<string>\",\n      \"S3Object\": {\n        \"Bucket\": \"<string>\",\n        \"Name\": \"<string>\"\n      }\n    }\n  ]\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/#AnalyzeID",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                ""
+              ],
+              "hash": "AnalyzeID"
+            },
+            "description": "Analyzes identity documents for relevant information including name, address, and date of birth from passports and driver's licenses."
+          },
+          "response": [
+            {
+              "id": "671b03c3-cd36-48b9-b961-cc794d1c9662",
+              "name": "ID analysis results.",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/x-amz-json-1.1"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"DocumentPages\": [\n    {\n      \"Bytes\": \"<string>\",\n      \"S3Object\": {\n        \"Bucket\": \"<string>\",\n        \"Name\": \"<string>\"\n      }\n    },\n    {\n      \"Bytes\": \"<string>\",\n      \"S3Object\": {\n        \"Bucket\": \"<string>\",\n        \"Name\": \"<string>\"\n      }\n    }\n  ]\n}"
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#AnalyzeID",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "AnalyzeID"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"IdentityDocuments\": [\n    {\n      \"DocumentIndex\": \"<integer>\",\n      \"IdentityDocumentFields\": [\n        {\n          \"Type\": {},\n          \"ValueDetection\": {}\n        },\n        {\n          \"Type\": {},\n          \"ValueDetection\": {}\n        }\n      ]\n    },\n    {\n      \"DocumentIndex\": \"<integer>\",\n      \"IdentityDocumentFields\": [\n        {\n          \"Type\": {},\n          \"ValueDetection\": {}\n        },\n        {\n          \"Type\": {},\n          \"ValueDetection\": {}\n        }\n      ]\n    }\n  ],\n  \"DocumentMetadata\": {}\n}",
+              "createdAt": "2026-07-28T00:56:38.000Z",
+              "updatedAt": "2026-07-28T00:56:38.000Z",
+              "uid": "35240-671b03c3-cd36-48b9-b961-cc794d1c9662"
+            }
+          ],
+          "createdAt": "2026-07-28T00:56:38.000Z",
+          "updatedAt": "2026-07-28T00:56:38.000Z",
+          "uid": "35240-efbdc468-cecb-4e6b-92b7-53496503fc16"
+        }
+      ],
+      "id": "961d53eb-34d8-483c-b017-805c49b26035",
+      "createdAt": "2026-07-28T00:56:38.000Z",
+      "updatedAt": "2026-07-28T00:56:38.000Z",
+      "uid": "35240-961d53eb-34d8-483c-b017-805c49b26035"
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://textract.amazonaws.com"
+    }
+  ]
+}

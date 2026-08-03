@@ -1,0 +1,115 @@
+{
+  "info": {
+    "_postman_id": "9f2b41c9-caf3-4863-b4e5-425a197aaf89",
+    "name": "Amazon Textract Async Operations Expense Analysis API",
+    "description": "Amazon Textract is a machine learning service that automatically extracts text, handwriting, and data from scanned documents, going beyond simple OCR to identify and extract data from forms and tables.\n\nContact Support:\n Name: Kin Lane\n Email: kin@apievangelist.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T00:56:32.000Z",
+    "updatedAt": "2026-07-28T00:56:32.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-9f2b41c9-caf3-4863-b4e5-425a197aaf89"
+  },
+  "item": [
+    {
+      "name": "#AnalyzeExpense",
+      "item": [
+        {
+          "name": "Amazon Textract Analyze Expense",
+          "id": "a21e348a-e0a0-4b90-bd99-5d673fe7f32d",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-amz-json-1.1"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"Document\": {\n    \"Bytes\": \"<string>\",\n    \"S3Object\": {\n      \"Bucket\": \"<string>\",\n      \"Name\": \"<string>\"\n    }\n  }\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/#AnalyzeExpense",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                ""
+              ],
+              "hash": "AnalyzeExpense"
+            },
+            "description": "Analyzes an input document for financially related relationships between text, returning information about expenses including vendor name, line items, and total amounts."
+          },
+          "response": [
+            {
+              "id": "a4848fb7-99e1-4f57-a3bc-5f711a82dd5f",
+              "name": "Expense analysis results.",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/x-amz-json-1.1"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Document\": {\n    \"Bytes\": \"<string>\",\n    \"S3Object\": {\n      \"Bucket\": \"<string>\",\n      \"Name\": \"<string>\"\n    }\n  }\n}"
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/#AnalyzeExpense",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ],
+                  "hash": "AnalyzeExpense"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"DocumentMetadata\": {},\n  \"ExpenseDocuments\": [\n    {\n      \"ExpenseIndex\": \"<integer>\"\n    },\n    {\n      \"ExpenseIndex\": \"<integer>\"\n    }\n  ]\n}",
+              "createdAt": "2026-07-28T00:56:32.000Z",
+              "updatedAt": "2026-07-28T00:56:32.000Z",
+              "uid": "35240-a4848fb7-99e1-4f57-a3bc-5f711a82dd5f"
+            }
+          ],
+          "createdAt": "2026-07-28T00:56:32.000Z",
+          "updatedAt": "2026-07-28T00:56:32.000Z",
+          "uid": "35240-a21e348a-e0a0-4b90-bd99-5d673fe7f32d"
+        }
+      ],
+      "id": "8e6c24b1-ebf5-43a1-b3ec-28f57443135d",
+      "createdAt": "2026-07-28T00:56:32.000Z",
+      "updatedAt": "2026-07-28T00:56:32.000Z",
+      "uid": "35240-8e6c24b1-ebf5-43a1-b3ec-28f57443135d"
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://textract.amazonaws.com"
+    }
+  ]
+}

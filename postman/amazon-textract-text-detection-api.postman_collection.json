@@ -1,0 +1,113 @@
+{
+  "info": {
+    "_postman_id": "43e0c9f2-2da6-4c06-a099-a3d154cfd0cf",
+    "name": "Amazon Textract Async Operations Text Detection API",
+    "description": "Amazon Textract is a machine learning service that automatically extracts text, handwriting, and data from scanned documents, going beyond simple OCR to identify and extract data from forms and tables.\n\nContact Support:\n Name: Kin Lane\n Email: kin@apievangelist.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T00:56:38.000Z",
+    "updatedAt": "2026-07-28T00:56:39.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-43e0c9f2-2da6-4c06-a099-a3d154cfd0cf"
+  },
+  "item": [
+    {
+      "name": "/",
+      "item": [
+        {
+          "name": "Amazon Textract Detect Document Text",
+          "id": "5ea6d89b-842b-4196-a935-1a1ba4363f7f",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-amz-json-1.1"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"Document\": {\n    \"Bytes\": \"<string>\",\n    \"S3Object\": {\n      \"Bucket\": \"<string>\",\n      \"Name\": \"<string>\",\n      \"Version\": \"<string>\"\n    }\n  }\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                ""
+              ]
+            },
+            "description": "Detects text in the input document, returning lines and words of detected text along with confidence levels and bounding box information."
+          },
+          "response": [
+            {
+              "id": "3cb974c6-1ea6-42dd-9212-1e89593c8117",
+              "name": "Successful text detection response.",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/x-amz-json-1.1"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Document\": {\n    \"Bytes\": \"<string>\",\n    \"S3Object\": {\n      \"Bucket\": \"<string>\",\n      \"Name\": \"<string>\",\n      \"Version\": \"<string>\"\n    }\n  }\n}"
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    ""
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"DocumentMetadata\": {\n    \"Pages\": \"<integer>\"\n  },\n  \"Blocks\": [\n    {\n      \"BlockType\": \"CELL\",\n      \"Confidence\": \"<float>\",\n      \"Text\": \"<string>\",\n      \"Geometry\": {\n        \"BoundingBox\": {\n          \"Width\": \"<number>\",\n          \"Height\": \"<number>\",\n          \"Left\": \"<number>\",\n          \"Top\": \"<number>\"\n        },\n        \"Polygon\": [\n          {\n            \"X\": \"<number>\",\n            \"Y\": \"<number>\"\n          },\n          {\n            \"X\": \"<number>\",\n            \"Y\": \"<number>\"\n          }\n        ]\n      },\n      \"Id\": \"<string>\",\n      \"Relationships\": [\n        {\n          \"Type\": \"COMPLEX_FEATURES\",\n          \"Ids\": [\n            \"<string>\",\n            \"<string>\"\n          ]\n        },\n        {\n          \"Type\": \"VALUE\",\n          \"Ids\": [\n            \"<string>\",\n            \"<string>\"\n          ]\n        }\n      ],\n      \"Page\": \"<integer>\"\n    },\n    {\n      \"BlockType\": \"LAYOUT_FOOTER\",\n      \"Confidence\": \"<float>\",\n      \"Text\": \"<string>\",\n      \"Geometry\": {\n        \"BoundingBox\": {\n          \"Width\": \"<number>\",\n          \"Height\": \"<number>\",\n          \"Left\": \"<number>\",\n          \"Top\": \"<number>\"\n        },\n        \"Polygon\": [\n          {\n            \"X\": \"<number>\",\n            \"Y\": \"<number>\"\n          },\n          {\n            \"X\": \"<number>\",\n            \"Y\": \"<number>\"\n          }\n        ]\n      },\n      \"Id\": \"<string>\",\n      \"Relationships\": [\n        {\n          \"Type\": \"COMPLEX_FEATURES\",\n          \"Ids\": [\n            \"<string>\",\n            \"<string>\"\n          ]\n        },\n        {\n          \"Type\": \"TABLE_FOOTER\",\n          \"Ids\": [\n            \"<string>\",\n            \"<string>\"\n          ]\n        }\n      ],\n      \"Page\": \"<integer>\"\n    }\n  ],\n  \"AnalyzeDocumentModelVersion\": \"<string>\"\n}",
+              "createdAt": "2026-07-28T00:56:39.000Z",
+              "updatedAt": "2026-07-28T00:56:39.000Z",
+              "uid": "35240-3cb974c6-1ea6-42dd-9212-1e89593c8117"
+            }
+          ],
+          "createdAt": "2026-07-28T00:56:39.000Z",
+          "updatedAt": "2026-07-28T00:56:39.000Z",
+          "uid": "35240-5ea6d89b-842b-4196-a935-1a1ba4363f7f"
+        }
+      ],
+      "id": "008f6da1-9905-4c9c-b449-e35b318659d5",
+      "createdAt": "2026-07-28T00:56:39.000Z",
+      "updatedAt": "2026-07-28T00:56:39.000Z",
+      "uid": "35240-008f6da1-9905-4c9c-b449-e35b318659d5"
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://textract.amazonaws.com"
+    }
+  ]
+}
