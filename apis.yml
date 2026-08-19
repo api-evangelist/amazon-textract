@@ -3,6 +3,7 @@ description: >-
   Amazon Textract is a machine learning service that automatically extracts text, handwriting, and structured data from
   scanned documents. It goes beyond simple optical character recognition (OCR) to identify and extract data from forms
   and tables, enabling automated document processing workflows without manual review or custom code.
+specificationVersion: '0.23'
 accessModel:
   pricing: freemium
   onboarding: unknown
