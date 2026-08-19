@@ -1,0 +1,198 @@
+{
+  "item": [
+    {
+      "id": "da13d835-7c5f-45d6-8d88-99a2830e0872",
+      "name": "Async Operations",
+      "description": {
+        "content": "Operations for asynchronous document processing.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "b7601623-a616-470b-a4b6-b4bb1f26a37c",
+          "name": "Amazon Textract Start Document Text Detection",
+          "request": {
+            "name": "Amazon Textract Start Document Text Detection",
+            "description": {
+              "content": "Starts the asynchronous detection of text in a document stored in an Amazon S3 bucket.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                ""
+              ],
+              "hash": "StartDocumentTextDetection",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-amz-json-1.1"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"DocumentLocation\": {\n    \"S3Object\": {\n      \"Bucket\": \"<string>\",\n      \"Name\": \"<string>\",\n      \"Version\": \"<string>\"\n    }\n  },\n  \"ClientRequestToken\": \"<string>\",\n  \"JobTag\": \"<string>\",\n  \"NotificationChannel\": {\n    \"SNSTopicArn\": \"<string>\",\n    \"RoleArn\": \"<string>\"\n  }\n}"
+            }
+          },
+          "response": [
+            {
+              "id": "ba54b68b-0191-462c-96f0-584b67f1c29e",
+              "name": "Asynchronous job started successfully.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ""
+                  ],
+                  "hash": "StartDocumentTextDetection",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"DocumentLocation\": {\n    \"S3Object\": {\n      \"Bucket\": \"<string>\",\n      \"Name\": \"<string>\",\n      \"Version\": \"<string>\"\n    }\n  },\n  \"ClientRequestToken\": \"<string>\",\n  \"JobTag\": \"<string>\",\n  \"NotificationChannel\": {\n    \"SNSTopicArn\": \"<string>\",\n    \"RoleArn\": \"<string>\"\n  }\n}"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"JobId\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "545a0ff6-ba5f-4417-80eb-a9f1133a1d8f",
+          "name": "Amazon Textract Get Document Text Detection",
+          "request": {
+            "name": "Amazon Textract Get Document Text Detection",
+            "description": {
+              "content": "Gets the results for an Amazon Textract asynchronous operation that detects text in a document.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                ""
+              ],
+              "hash": "GetDocumentTextDetection",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-amz-json-1.1"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"JobId\": \"<string>\",\n  \"MaxResults\": \"<integer>\",\n  \"NextToken\": \"<string>\"\n}"
+            }
+          },
+          "response": [
+            {
+              "id": "f0d3dff8-a5f1-4467-a61d-c8b02dcbf812",
+              "name": "Text detection results.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ""
+                  ],
+                  "hash": "GetDocumentTextDetection",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"JobId\": \"<string>\",\n  \"MaxResults\": \"<integer>\",\n  \"NextToken\": \"<string>\"\n}"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"DocumentMetadata\": {\n    \"Pages\": 1492\n  },\n  \"JobStatus\": \"PARTIAL_SUCCESS\",\n  \"NextToken\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://textract.amazonaws.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "7fc6346f-def0-4fd1-a919-3cb5e8b408b6",
+    "name": "Amazon Textract Async Operations API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Amazon Textract is a machine learning service that automatically extracts text, handwriting, and data from scanned documents, going beyond simple OCR to identify and extract data from forms and tables.\n\nContact Support:\n Name: Kin Lane\n Email: kin@apievangelist.com",
+      "type": "text/plain"
+    }
+  }
+}

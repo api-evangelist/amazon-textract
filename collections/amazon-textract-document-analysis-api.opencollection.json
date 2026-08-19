@@ -1,0 +1,33 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Amazon Textract Async Operations Document Analysis API",
+    "version": "2018-06-27"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Document Analysis",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Amazon Textract Analyze Document",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://textract.amazonaws.com/#AnalyzeDocument",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Analyzes an input document for relationships between detected items, including tables, forms, and key-value pairs."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

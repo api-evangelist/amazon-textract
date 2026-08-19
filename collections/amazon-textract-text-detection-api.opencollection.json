@@ -1,0 +1,33 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Amazon Textract Async Operations Text Detection API",
+    "version": "2018-06-27"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Text Detection",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Amazon Textract Detect Document Text",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://textract.amazonaws.com/",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Detects text in the input document, returning lines and words of detected text along with confidence levels and bounding box information."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

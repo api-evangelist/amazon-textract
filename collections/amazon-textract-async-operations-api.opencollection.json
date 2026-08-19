@@ -1,0 +1,48 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Amazon Textract Async Operations API",
+    "version": "2018-06-27"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Async Operations",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Amazon Textract Start Document Text Detection",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://textract.amazonaws.com/#StartDocumentTextDetection",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Starts the asynchronous detection of text in a document stored in an Amazon S3 bucket."
+        },
+        {
+          "info": {
+            "name": "Amazon Textract Get Document Text Detection",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://textract.amazonaws.com/#GetDocumentTextDetection",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Gets the results for an Amazon Textract asynchronous operation that detects text in a document."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

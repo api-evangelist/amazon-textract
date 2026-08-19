@@ -1,0 +1,33 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Amazon Textract Async Operations ID Analysis API",
+    "version": "2018-06-27"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "ID Analysis",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Amazon Textract Analyze ID",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://textract.amazonaws.com/#AnalyzeID",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Analyzes identity documents for relevant information including name, address, and date of birth from passports and driver's licenses."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

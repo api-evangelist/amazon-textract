@@ -1,0 +1,33 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Amazon Textract Async Operations Expense Analysis API",
+    "version": "2018-06-27"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Expense Analysis",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Amazon Textract Analyze Expense",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://textract.amazonaws.com/#AnalyzeExpense",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Analyzes an input document for financially related relationships between text, returning information about expenses including vendor name, line items, and total amounts."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
