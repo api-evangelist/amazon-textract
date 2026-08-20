@@ -181,5 +181,10 @@ maintainers:
 tags:
   - AWS
   - Document Processing
+  - Machine-Learning
+  - OCR
+tags_raw:
+  - AWS
+  - Document Processing
   - Machine Learning
   - OCR
