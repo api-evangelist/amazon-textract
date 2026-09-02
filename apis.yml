@@ -200,3 +200,5 @@ tags_raw:
   - Document Processing
   - Machine Learning
   - OCR
+x-parent: aws
+x-relationship: product
