@@ -193,12 +193,13 @@ maintainers:
 tags:
   - AWS
   - Document Processing
-  - Machine-Learning
+  - Machine Learning
   - OCR
 tags_raw:
   - AWS
   - Document Processing
   - Machine Learning
   - OCR
-x-parent: aws
+  - Machine-Learning
+x-parent: amazon-web-services
 x-relationship: product
