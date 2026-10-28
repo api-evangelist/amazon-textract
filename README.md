@@ -1,4 +1,4 @@
-# Amazon Textract (amazon-textract)
+# Amazon Textract
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,68 +66,177 @@
 
 Amazon Textract is a machine learning service that automatically extracts text, handwriting, and structured data from scanned documents. It goes beyond simple optical character recognition (OCR) to identify and extract data from forms and tables, enabling automated document processing workflows without manual review or custom code.
 
-**APIs.json:** [https://aws.amazon.com/textract/](https://aws.amazon.com/textract/)
+**Areas:** AWS · Document Processing · Machine Learning · OCR
 
-## Tags
+## Amazon Textract on APIs.io
 
-- AWS
-- Document Processing
-- Machine Learning
-- OCR
+Everything profiled for Amazon Textract is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/amazon-textract/](https://apis.io/providers/amazon-textract/)** — or go straight to one of the APIs or properties below.
 
-## Timestamps
+### APIs (8)
 
-- **Created:** 2024-01-15
-- **Modified:** 2026-05-19
+- [Amazon Textract Async Operations API](https://apis.io/apis/amazon-textract/amazon-textract-async-operations-api/) — Operations for asynchronous document processing.
+- [Amazon Textract Document Analysis API](https://apis.io/apis/amazon-textract/amazon-textract-document-analysis-api/) — Operations for analyzing document structure and content.
+- [Amazon Textract Expense Analysis API](https://apis.io/apis/amazon-textract/amazon-textract-expense-analysis-api/) — Operations for analyzing expense documents.
+- [Amazon Textract ID Analysis API](https://apis.io/apis/amazon-textract/amazon-textract-id-analysis-api/) — Operations for analyzing identity documents.
+- [Amazon Textract Text Detection API](https://apis.io/apis/amazon-textract/amazon-textract-text-detection-api/) — Operations for detecting text in documents.
+- [Amazon Textract Textract Adapter API](https://apis.io/apis/amazon-textract/amazon-textract-adapter-api/) — The Textract Adapter API from Amazon Textract — 5 operation(s) for textract adapter.
+- [Amazon Textract Textract Adapter Version API](https://apis.io/apis/amazon-textract/amazon-textract-adapter-version-api/) — The Textract Adapter Version API from Amazon Textract — 4 operation(s) for textract adapter version.
+- [Amazon Textract Textract Operations API](https://apis.io/apis/amazon-textract/amazon-textract-operations-api/) — The Textract Operations API from Amazon Textract — 8 operation(s) for textract operations.
 
-## APIs
+### Published properties
 
-### Amazon Textract API
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-The Amazon Textract API provides programmatic access to extract text, handwriting, and structured data from documents. It enables developers to analyze documents for text detection, form extraction, table extraction, and expense analysis, supporting both synchronous and asynchronous processing for documents of varying sizes.
+#### Agentic access (1)
 
-- **Human URL:** [https://aws.amazon.com/textract/](https://aws.amazon.com/textract/)
-- **Base URL:** `https://textract.amazonaws.com`
+Which operations an agent can call, which act, and which need a human in the loop.
 
-#### Tags
+- [Amazon Textract Agentic Access](https://apis.io/agentic-access/amazon-textract/amazon-textract-agentic-access/)
 
-- AWS
-- Document Processing
-- Machine Learning
-- OCR
+#### JSON Schema (2)
 
-#### Properties
+The data models the API reads and writes.
 
-- [Documentation](https://docs.aws.amazon.com/textract/)
-- [OpenAPI](https://raw.githubusercontent.com/api-evangelist/amazon-textract/refs/heads/main/openapi/amazon-textract-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Pricing](https://aws.amazon.com/textract/pricing/)
-- [Getting Started](https://aws.amazon.com/textract/getting-started/)
-- [F A Q](https://aws.amazon.com/textract/faqs/)
-- [Postman Collection](collections/amazon-textract.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/amazon-textract.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+- [DocumentAnalysis](https://apis.io/schemas/amazon-textract/amazon-textract-document-analysis/)
+- [DocumentAnalysis](https://apis.io/schemas/amazon-textract/amazon-textract-documentanalysis/)
 
-## Common Properties
+#### JSON Structure (2)
 
-- [Portal](https://aws.amazon.com/)
+Data models expressed in JSON Structure.
+
+- [Amazon Textract Document Analysis Structure](https://apis.io/json-structure/amazon-textract/amazon-textract-document-analysis-structure/)
+- [Amazon Textract Documentanalysis Structure](https://apis.io/json-structure/amazon-textract/amazon-textract-documentanalysis-structure/)
+
+#### JSON-LD (1)
+
+Linked-data contexts for the provider's vocabulary.
+
+- [Amazon Textract Context](https://apis.io/jsonld/amazon-textract/amazon-textract-context/)
+
+#### Vocabulary (1)
+
+The provider's domain terms, defined.
+
+- [Amazon Textract Vocabulary](https://apis.io/vocabularies/amazon-textract/amazon-textract-vocabulary/)
+
+#### Examples (1)
+
+Example requests and responses.
+
+- [Amazon Textract Example](https://apis.io/examples/amazon-textract/amazon-textract-example/)
+
+#### Collections (11)
+
+Postman and Open Collection request collections.
+
+- [Amazon Textract](https://apis.io/collections/amazon-textract/open-amazon-textract/)
+- [Amazon Textract Async Operations API](https://apis.io/collections/amazon-textract/open-amazon-textract-async-operations-api/)
+- [Amazon Textract Async Operations Document Analysis API](https://apis.io/collections/amazon-textract/open-amazon-textract-document-analysis-api/)
+- [Amazon Textract Async Operations Expense Analysis API](https://apis.io/collections/amazon-textract/open-amazon-textract-expense-analysis-api/)
+- [Amazon Textract Async Operations ID Analysis API](https://apis.io/collections/amazon-textract/open-amazon-textract-id-analysis-api/)
+- [Amazon Textract Async Operations Text Detection API](https://apis.io/collections/amazon-textract/open-amazon-textract-text-detection-api/)
+- [Amazon Textract Async Operations API](https://apis.io/collections/amazon-textract/postman-amazon-textract-async-operations-api/)
+- [Amazon Textract Async Operations Document Analysis API](https://apis.io/collections/amazon-textract/postman-amazon-textract-document-analysis-api/)
+- [Amazon Textract Async Operations Expense Analysis API](https://apis.io/collections/amazon-textract/postman-amazon-textract-expense-analysis-api/)
+- [Amazon Textract Async Operations ID Analysis API](https://apis.io/collections/amazon-textract/postman-amazon-textract-id-analysis-api/)
+- [Amazon Textract Async Operations Text Detection API](https://apis.io/collections/amazon-textract/postman-amazon-textract-text-detection-api/)
+
+#### Governance rules (2)
+
+Spectral rulesets for the provider's contracts.
+
+- [Amazon Textract — jsonschema rules](https://apis.io/rules/amazon-textract/amazon-textract-jsonschema-spectral-rules/)
+- [Amazon Textract API Rules](https://apis.io/rules/amazon-textract/amazon-textract-spectral-rules/)
+
+#### Security (3)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Amazon Textract Domain Security](https://apis.io/security/amazon-textract/amazon-textract-domain-security/)
+- [Amazon Textract Trust Center](https://apis.io/security/amazon-textract/amazon-textract-trust-center/)
+- [Amazon Textract Vulnerability Disclosure](https://apis.io/security/amazon-textract/amazon-textract-vulnerability-disclosure/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Amazon Textract Plans Pricing](https://apis.io/plans/amazon-textract/amazon-textract-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Amazon Textract Rate Limits](https://apis.io/rate-limits/amazon-textract/amazon-textract-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Amazon Textract Finops](https://apis.io/finops/amazon-textract/amazon-textract-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
 - [Website](https://aws.amazon.com/textract/)
 - [Documentation](https://docs.aws.amazon.com/textract/)
-- [Terms of Service](https://aws.amazon.com/service-terms/)
-- [Privacy Policy](https://aws.amazon.com/privacy/)
 - [Support](https://aws.amazon.com/premiumsupport/)
-- [GitHub Organization](https://github.com/aws)
-- [Console](https://console.aws.amazon.com/textract/)
-- [Sign Up](https://signin.aws.amazon.com/signup?request_type=register)
-- [Login](https://aws.amazon.com/console/)
-- [Status Page](https://health.aws.amazon.com/health/status)
-- [Contact](https://aws.amazon.com/contact-us/)
-- [Spectral Rules](https://raw.githubusercontent.com/api-evangelist/amazon-textract/refs/heads/main/rules/amazon-textract-spectral-rules.yml)
-- [Vocabulary](https://raw.githubusercontent.com/api-evangelist/amazon-textract/refs/heads/main/vocabulary/amazon-textract-vocabulary.yaml)
-- [Features](undefined)
-- [Use Cases](undefined)
-- [Integrations](https://aws.amazon.com/marketplace)
+- [Terms of service](https://aws.amazon.com/service-terms/)
+- [Privacy policy](https://aws.amazon.com/privacy/)
+- [GitHub](https://github.com/aws)
+- [Status](https://health.aws.amazon.com/health/status)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
-**URL:** https://apievangelist.com
+**Kin Score 43.8** — developing · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 64.3 |
+| Contract quality | 43.8 |
+| Contract governance | 27.3 |
+| Operational transparency | 36.8 |
+| Developer ergonomics | 32.1 |
+| Access clarity | 53.9 |
+
+**Agent readiness 17.2** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | — |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+| Pagination Ratio | na |
+| Operation Distinctiveness | distinct |
+
+**Regulatory alignment 27.3** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/amazon-textract/](https://apis.io/providers/amazon-textract/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Amazon Textract: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/amazon-textract/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
