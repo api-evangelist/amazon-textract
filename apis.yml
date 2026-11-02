@@ -1,0 +1,246 @@
+name: Amazon Textract
+description: >-
+  Amazon Textract is a machine learning service that automatically extracts text, handwriting, and structured data from
+  scanned documents. It goes beyond simple optical character recognition (OCR) to identify and extract data from forms
+  and tables, enabling automated document processing workflows without manual review or custom code.
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: false
+  label: Hosted service · you call their endpoint
+  confidence: medium
+  source:
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
+specificationVersion: '0.23'
+accessModel:
+  pricing: freemium
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Freemium
+  confidence: medium
+  source:
+  - plans
+  generated: '2026-07-22'
+  method: derived
+image: https://a0.awsstatic.com/libra-css/images/logos/aws_logo_smile_1200x630.png
+url: https://aws.amazon.com/textract/
+created: '2024-01-15'
+modified: '2026-05-19'
+apis:
+- aid: amazon-textract:amazon-textract-async-operations-api
+  name: Amazon Textract Async Operations API
+  description: Operations for asynchronous document processing.
+  humanURL: https://aws.amazon.com/textract/
+  baseURL: https://textract.amazonaws.com
+  tags:
+  - Async Operations
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-textract-async-operations-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/textract/
+  - type: Pricing
+    url: https://aws.amazon.com/textract/pricing/
+  - type: GettingStarted
+    url: https://aws.amazon.com/textract/getting-started/
+  - type: FAQ
+    url: https://aws.amazon.com/textract/faqs/
+- aid: amazon-textract:amazon-textract-document-analysis-api
+  name: Amazon Textract Document Analysis API
+  description: Operations for analyzing document structure and content.
+  humanURL: https://aws.amazon.com/textract/
+  baseURL: https://textract.amazonaws.com
+  tags:
+  - Document Analysis
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-textract-document-analysis-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/textract/
+  - type: Pricing
+    url: https://aws.amazon.com/textract/pricing/
+  - type: GettingStarted
+    url: https://aws.amazon.com/textract/getting-started/
+  - type: FAQ
+    url: https://aws.amazon.com/textract/faqs/
+- aid: amazon-textract:amazon-textract-expense-analysis-api
+  name: Amazon Textract Expense Analysis API
+  description: Operations for analyzing expense documents.
+  humanURL: https://aws.amazon.com/textract/
+  baseURL: https://textract.amazonaws.com
+  tags:
+  - Expense Analysis
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-textract-expense-analysis-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/textract/
+  - type: Pricing
+    url: https://aws.amazon.com/textract/pricing/
+  - type: GettingStarted
+    url: https://aws.amazon.com/textract/getting-started/
+  - type: FAQ
+    url: https://aws.amazon.com/textract/faqs/
+- aid: amazon-textract:amazon-textract-id-analysis-api
+  name: Amazon Textract ID Analysis API
+  description: Operations for analyzing identity documents.
+  humanURL: https://aws.amazon.com/textract/
+  baseURL: https://textract.amazonaws.com
+  tags:
+  - ID Analysis
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-textract-id-analysis-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/textract/
+  - type: Pricing
+    url: https://aws.amazon.com/textract/pricing/
+  - type: GettingStarted
+    url: https://aws.amazon.com/textract/getting-started/
+  - type: FAQ
+    url: https://aws.amazon.com/textract/faqs/
+- aid: amazon-textract:amazon-textract-text-detection-api
+  name: Amazon Textract Text Detection API
+  description: Operations for detecting text in documents.
+  humanURL: https://aws.amazon.com/textract/
+  baseURL: https://textract.amazonaws.com
+  tags:
+  - Text Detection
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-textract-text-detection-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/textract/
+  - type: Pricing
+    url: https://aws.amazon.com/textract/pricing/
+  - type: GettingStarted
+    url: https://aws.amazon.com/textract/getting-started/
+  - type: FAQ
+    url: https://aws.amazon.com/textract/faqs/
+- aid: amazon-textract:amazon-textract-adapter-api
+  name: Amazon Textract Textract Adapter API
+  description: The Textract Adapter API from Amazon Textract — 5 operation(s) for textract adapter.
+  humanURL: https://aws.amazon.com/textract/
+  baseURL: https://textract.amazonaws.com
+  tags:
+  - Textract Adapter
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-textract-adapter-api-openapi.yml
+- aid: amazon-textract:amazon-textract-adapter-version-api
+  name: Amazon Textract Textract Adapter Version API
+  description: >-
+    The Textract Adapter Version API from Amazon Textract — 4 operation(s) for textract adapter version.
+  humanURL: https://aws.amazon.com/textract/
+  baseURL: https://textract.amazonaws.com
+  tags:
+  - Textract Adapter Version
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-textract-adapter-version-api-openapi.yml
+- aid: amazon-textract:amazon-textract-operations-api
+  name: Amazon Textract Textract Operations API
+  description: >-
+    The Textract Operations API from Amazon Textract — 8 operation(s) for textract operations.
+  humanURL: https://aws.amazon.com/textract/
+  baseURL: https://textract.amazonaws.com
+  tags:
+  - Textract Operations
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-textract-operations-api-openapi.yml
+common:
+  - type: CapabilityMap
+    url: capabilities/amazon-textract-capability-edges.yml
+    name: Amazon Textract Business Capability Map
+  - type: Plans
+    url: plans/amazon-textract-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/amazon-textract-rate-limits.yml
+  - type: FinOps
+    url: finops/amazon-textract-finops.yml
+  - type: PostmanWorkspace
+    url: https://www.postman.com/kinlaneapi/amazon-textract/overview
+  - type: AgenticAccess
+    url: agentic-access/amazon-textract-agentic-access.yml
+  - type: TrustCenter
+    url: security/amazon-textract-trust-center.yml
+  - type: VulnerabilityDisclosure
+    url: security/amazon-textract-vulnerability-disclosure.yml
+  - type: DomainSecurity
+    url: security/amazon-textract-domain-security.yml
+  - type: Portal
+    url: https://aws.amazon.com/
+  - type: Website
+    url: https://aws.amazon.com/textract/
+  - type: Documentation
+    url: https://docs.aws.amazon.com/textract/
+  - type: TermsOfService
+    url: https://aws.amazon.com/service-terms/
+  - type: PrivacyPolicy
+    url: https://aws.amazon.com/privacy/
+  - type: Support
+    url: https://aws.amazon.com/premiumsupport/
+  - type: GitHubOrganization
+    url: https://github.com/aws
+  - type: Console
+    url: https://console.aws.amazon.com/textract/
+  - type: Signup
+    url: https://signin.aws.amazon.com/signup?request_type=register
+  - type: Login
+    url: https://aws.amazon.com/console/
+  - type: StatusPage
+    url: https://health.aws.amazon.com/health/status
+  - type: Contact
+    url: https://aws.amazon.com/contact-us/
+  - type: SpectralRules
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/amazon-textract/refs/heads/main/rules/amazon-textract-spectral-rules.yml
+  - type: Vocabulary
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/amazon-textract/refs/heads/main/vocabulary/amazon-textract-vocabulary.yaml
+  - type: Features
+    data:
+      - name: Automation
+        description: Automate operational tasks with Amazon Textract.
+      - name: API Access
+        description: Programmatic access to Amazon Textract resources.
+  - type: UseCases
+    data:
+      - name: Cloud Operations
+        description: Use Amazon Textract to manage and automate cloud operations.
+  - type: Integrations
+    url: https://aws.amazon.com/marketplace
+integrations:
+  - name: Sign in
+  - name: Agent Mode
+  - name: Why AWS Marketplace?
+  - name: Get started in AWS Marketplace
+  - name: Industry
+  - name: Resources
+  - name: Become a Channel Partner
+  - name: Sell in AWS Marketplace
+  - name: Manage Your Account
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com
+    url: https://apievangelist.com
+tags:
+  - Amazon Web Services
+  - Document Processing
+  - Machine Learning
+  - OCR
+tags_raw:
+  - AWS
+  - Document Processing
+  - Machine Learning
+  - OCR
+  - Machine-Learning
+x-parent: amazon-web-services
+x-relationship: product

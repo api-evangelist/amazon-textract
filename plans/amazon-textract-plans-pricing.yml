@@ -1,0 +1,229 @@
+# Pricing transcribed from the provider's own page — see provenance. Numbers are quoted, not derived.
+generated: '2026-10-28'
+method: searched
+source: https://aws.amazon.com/textract/pricing/
+sources:
+- https://aws.amazon.com/textract/pricing/
+provenance:
+  tool: engine/economics/harvest_pricing.py
+  run: 20261028T161713
+  grounding: every price_text was found verbatim in the fetched page text
+audience: developer-api
+pricing_basis: per-call
+delivery:
+  delivery: managed
+  method: page
+  read: '2026-10-28'
+published: true
+note: Main pricing tables render via dynamic placeholders ({priceOf!...}); numeric per-page prices come
+  from the page's pricing examples for US West (Oregon). Free Tier lasts three months for new AWS customers.
+plan_count: 13
+currency: USD
+plans:
+- name: Detect Document Text API
+  price_text: $0.0015
+  price: 0.0015
+  currency: USD
+  period: per-use
+  unit: per page (US West (Oregon), first 1 million pages)
+  included_quota: 'Free Tier: 1,000 pages per month for three months'
+  overage: pages after one million are $0.0006
+- name: Analyze Document API – Tables
+  price_text: $0.015
+  price: 0.015
+  currency: USD
+  period: per-use
+  unit: per page (first 1M pages/month)
+  overage: $0.010 per page for the pages exceeding 1M pages in a month
+- name: Analyze Document API – Forms
+  price_text: $0.05
+  price: 0.05
+  currency: USD
+  period: per-use
+  unit: per page (first 1M pages/month)
+  included_quota: 'Free Tier: 100 Pages per month when using Forms, Tables, and Layout features'
+  overage: $0.04 per page after one million
+- name: Analyze Document API – Queries
+  price_text: $0.015
+  price: 0.015
+  currency: USD
+  period: per-use
+  unit: per page (first 1M pages/month)
+  included_quota: 100 pages per month each for Queries, Forms + Queries, Tables + Queries, Forms + Tables
+    + Queries
+- name: Analyze Document API – Tables + Queries
+  price_text: $0.020
+  price: 0.02
+  currency: USD
+  period: per-use
+  unit: per page (first 1M pages/month)
+  overage: $0.015 per page after one million pages
+- name: Analyze Document API – Tables, Forms and Queries
+  price_text: $0.070
+  price: 0.07
+  currency: USD
+  period: per-use
+  unit: per page (first 1M pages/month)
+  overage: $0.055 per page after one million pages
+- name: Analyze Document API – Signatures
+  price_text: $0.0035
+  price: 0.0035
+  currency: USD
+  period: per-use
+  unit: per page (first 1M pages/month)
+  included_quota: 1000 Pages per month when using Signatures only
+  overage: $0.0014 per page thereafter (per pricing example)
+- name: Analyze Document API – Custom Queries
+  price_text: $0.025
+  price: 0.025
+  currency: USD
+  period: per-use
+  unit: per page (first 1M pages/month)
+  included_quota: There is no free-tier for Custom Queries; Training of adapters for Custom Queries is
+    free.
+  overage: $0.015 per page for the pages exceeding 1M pages in a month
+- name: Analyze Document API – Pretrained Forms and Custom Queries
+  price_text: $0.065
+  price: 0.065
+  currency: USD
+  period: per-use
+  unit: per page (first 1M pages/month)
+  overage: $0.050 per page for the pages exceeding 1M pages in a month
+- name: Analyze Expense API
+  price_text: $0.01
+  price: 0.01
+  currency: USD
+  period: per-use
+  unit: per page (first 1M pages/month)
+  included_quota: 'Free Tier: 100 pages per month'
+  overage: $0.008 per page after one million
+- name: Analyze ID API
+  price_text: $0.025
+  price: 0.025
+  currency: USD
+  period: per-use
+  unit: per page (up to 100,000 pages)
+  included_quota: 'Free Tier: 100 pages per month'
+  overage: $0.01 per page after 100,000
+- name: Analyze Lending API
+  price_text: $0.07
+  price: 0.07
+  currency: USD
+  period: per-use
+  unit: per page (up to one million pages)
+  included_quota: 'Free Tier: 2,000 pages per month'
+  overage: $0.055 per page after 1,000,000
+- name: High volume custom pricing
+  price_text: Request custom pricing
+  period: none
+x-canonical:
+  generated: '2026-11-01'
+  vocabulary: engine/economics/plans-canonical.yml
+  models:
+  - hybrid
+  - subscription
+  units: []
+  plans:
+  - name: Detect Document Text API
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - other
+    periods:
+    - other
+  - name: Analyze Document API – Tables
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - other
+    periods:
+    - other
+  - name: Analyze Document API – Forms
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - other
+    periods:
+    - other
+  - name: Analyze Document API – Queries
+    access: other
+    model: subscription
+    model_how: derived
+    units:
+    - other
+    periods:
+    - other
+  - name: Analyze Document API – Tables + Queries
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - other
+    periods:
+    - other
+  - name: Analyze Document API – Tables, Forms and Queries
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - other
+    periods:
+    - other
+  - name: Analyze Document API – Signatures
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - other
+    periods:
+    - other
+  - name: Analyze Document API – Custom Queries
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - other
+    periods:
+    - other
+  - name: Analyze Document API – Pretrained Forms and Custom Queries
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - other
+    periods:
+    - other
+  - name: Analyze Expense API
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - other
+    periods:
+    - other
+  - name: Analyze ID API
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - other
+    periods:
+    - other
+  - name: Analyze Lending API
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - other
+    periods:
+    - other
+  - name: High volume custom pricing
+    access: other
+    model: unstated
+    model_how: derived
+    units: []
+    periods:
+    - none
