@@ -117,12 +117,13 @@ plans:
   price_text: Request custom pricing
   period: none
 x-canonical:
-  generated: '2026-11-02'
+  generated: '2026-11-06'
   vocabulary: engine/economics/plans-canonical.yml
   models:
   - hybrid
   - subscription
-  units: []
+  units:
+  - period
   plans:
   - name: Detect Document Text API
     access: other
@@ -137,7 +138,7 @@ x-canonical:
     model: hybrid
     model_how: derived
     units:
-    - other
+    - period
     periods:
     - other
   - name: Analyze Document API – Forms
@@ -145,7 +146,7 @@ x-canonical:
     model: hybrid
     model_how: derived
     units:
-    - other
+    - period
     periods:
     - other
   - name: Analyze Document API – Queries
@@ -153,7 +154,7 @@ x-canonical:
     model: subscription
     model_how: derived
     units:
-    - other
+    - period
     periods:
     - other
   - name: Analyze Document API – Tables + Queries
@@ -161,7 +162,7 @@ x-canonical:
     model: hybrid
     model_how: derived
     units:
-    - other
+    - period
     periods:
     - other
   - name: Analyze Document API – Tables, Forms and Queries
@@ -169,7 +170,7 @@ x-canonical:
     model: hybrid
     model_how: derived
     units:
-    - other
+    - period
     periods:
     - other
   - name: Analyze Document API – Signatures
@@ -177,7 +178,7 @@ x-canonical:
     model: hybrid
     model_how: derived
     units:
-    - other
+    - period
     periods:
     - other
   - name: Analyze Document API – Custom Queries
@@ -185,7 +186,7 @@ x-canonical:
     model: hybrid
     model_how: derived
     units:
-    - other
+    - period
     periods:
     - other
   - name: Analyze Document API – Pretrained Forms and Custom Queries
@@ -193,7 +194,7 @@ x-canonical:
     model: hybrid
     model_how: derived
     units:
-    - other
+    - period
     periods:
     - other
   - name: Analyze Expense API
@@ -201,7 +202,7 @@ x-canonical:
     model: hybrid
     model_how: derived
     units:
-    - other
+    - period
     periods:
     - other
   - name: Analyze ID API
